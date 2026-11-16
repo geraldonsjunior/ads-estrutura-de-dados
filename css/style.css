@@ -1,0 +1,162 @@
+/* CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F1F5F9;
+    color: #263445;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: #142D4E;
+    color: white;
+    padding: 30px 0 20px;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+header p {
+    color: #DCE6F1;
+    margin-top: 5px;
+}
+
+/* MENU */
+nav {
+    margin-top: 25px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #5EEAD4;
+}
+
+/* DESTAQUE */
+.destaque {
+    background-color: #E2EAF2;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.destaque h2 {
+    color: #142D4E;
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.destaque p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* BOTÃO */
+.botao {
+    display: inline-block;
+    background-color: #0F766E;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.botao:hover {
+    background-color: #115E59;
+}
+
+/* SEÇÕES */
+.secao {
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+.secao h2 {
+    color: #142D4E;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* CARTÕES */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #DCE3EA;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #0F766E;
+    margin-bottom: 10px;
+}
+
+/* SEÇÃO SOBRE */
+.sobre {
+    background-color: #E2EAF2;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #142D4E;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .destaque h2 {
+        font-size: 26px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
