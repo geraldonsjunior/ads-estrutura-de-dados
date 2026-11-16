@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vetores e Matrizes em C | Estrutura de Dados</title>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Estrutura de Dados</h1>
+            <p>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</p>
+
+            <nav>
+                <a href="../../index.html">Início</a>
+                <a href="../introducao/index.html">Introdução</a>
+                <a href="../ponteiros/index.html">Ponteiros</a>
+                <a href="index.html">Vetores e Matrizes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- APRESENTAÇÃO -->
+        <section class="secao">
+            <h2>Unidade 3 — Vetores e Matrizes em C</h2>
+
+            <p>
+                Nesta unidade, estudaremos duas estruturas fundamentais
+                para armazenar e organizar conjuntos de dados:
+                os vetores e as matrizes.
+            </p>
+
+            <p>
+                Aprenderemos a declarar essas estruturas, inserir dados
+                pelo teclado, percorrer seus elementos e realizar
+                operações utilizando laços de repetição.
+            </p>
+        </section>
+
+        <!-- OBJETIVOS -->
+        <section class="secao">
+            <h2>Objetivos de aprendizagem</h2>
+
+            <p>Ao concluir esta unidade, você deverá ser capaz de:</p>
+
+            <ul>
+                <li>Compreender o conceito de vetor e matriz.</li>
+                <li>Declarar e inicializar vetores em C.</li>
+                <li>Armazenar e acessar elementos de um vetor.</li>
+                <li>Utilizar estruturas de repetição para percorrer vetores.</li>
+                <li>Declarar e manipular matrizes bidimensionais.</li>
+                <li>Desenvolver programas que utilizem vetores e matrizes.</li>
+            </ul>
+        </section>
+
+        <!-- VETORES -->
+        <section class="secao">
+            <h2>1. O que são vetores?</h2>
+
+            <p>
+                Um vetor é uma estrutura de dados que permite armazenar
+                vários valores do mesmo tipo utilizando um único nome
+                de variável.
+            </p>
+
+            <p>
+                Imagine que precisamos armazenar as notas de cinco alunos.
+                Uma alternativa seria criar cinco variáveis diferentes.
+                Entretanto, podemos utilizar um vetor para organizar
+                essas informações.
+            </p>
+
+            <h3>Exemplo sem vetor:</h3>
+
+            <pre><code>float nota1 = 8.0;
+float nota2 = 7.5;
+float nota3 = 9.0;
+float nota4 = 6.5;
+float nota5 = 8.5;</code></pre>
+
+            <h3>Exemplo utilizando vetor:</h3>
+
+            <pre><code>float notas[5] = {8.0, 7.5, 9.0, 6.5, 8.5};</code></pre>
+
+            <p>
+                Observe que utilizamos apenas uma variável chamada
+                <strong>notas</strong> para armazenar cinco valores.
+            </p>
+        </section>
+
+        <!-- DECLARAÇÃO -->
+        <section class="secao">
+            <h2>2. Declarando um vetor em C</h2>
+
+            <p>
+                Para declarar um vetor, precisamos informar o tipo
+                de dado, o nome da variável e a quantidade de elementos.
+            </p>
+
+            <h3>Sintaxe:</h3>
+
+            <pre><code>tipo nome_do_vetor[tamanho];</code></pre>
+
+            <h3>Exemplos:</h3>
+
+            <pre><code>int idades[10];
+
+float notas[5];
+
+char letras[20];</code></pre>
+
+            <p>
+                No exemplo <strong>int idades[10]</strong>,
+                declaramos um vetor capaz de armazenar dez números inteiros.
+            </p>
+
+            <p>
+                Importante: em C, os índices dos vetores começam em zero.
+            </p>
+
+            <pre><code>int numeros[5] = {10, 20, 30, 40, 50};
+
+Indice:       0   1   2   3   4
+Elemento:    10  20  30  40  50</code></pre>
+
+            <p>
+                Portanto, um vetor com cinco elementos possui
+                índices de 0 até 4.
+            </p>
+        </section>
+
+        <!-- INICIALIZAÇÃO -->
+        <section class="secao">
+            <h2>3. Inicializando um vetor</h2>
+
+            <p>
+                Podemos atribuir valores ao vetor no momento
+                de sua declaração.
+            </p>
+
+            <pre><code>int numeros[4] = {5, 10, 15, 20};</code></pre>
+
+            <p>
+                Também podemos declarar o vetor e inserir os valores
+                posteriormente.
+            </p>
+
+            <pre><code>int numeros[4];
+
+numeros[0] = 5;
+numeros[1] = 10;
+numeros[2] = 15;
+numeros[3] = 20;</code></pre>
+
+            <p>
+                Para acessar um elemento, utilizamos o nome do vetor
+                acompanhado de seu índice.
+            </p>
+
+            <pre><code>printf("%d", numeros[0]);</code></pre>
+
+            <p>
+                O comando acima apresenta o primeiro elemento do vetor.
+            </p>
+        </section>
+
+        <!-- PERCORRER VETOR -->
+        <section class="secao">
+            <h2>4. Percorrendo um vetor com for</h2>
+
+            <p>
+                Quando precisamos acessar todos os elementos de um vetor,
+                podemos utilizar uma estrutura de repetição.
+            </p>
+
+            <p>
+                O comando <strong>for</strong> é bastante utilizado
+                nessa situação.
+            </p>
+
+            <h3>Exemplo:</h3>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+
+    int numeros[5] = {10, 20, 30, 40, 50};
+
+    for (int i = 0; i &lt; 5; i++) {
+        printf("%d\n", numeros[i]);
+    }
+
+    return 0;
+}</code></pre>
+
+            <p><strong>Saída:</strong></p>
+
+            <pre><code>10
+20
+30
+40
+50</code></pre>
+
+            <p>
+                A variável <strong>i</strong> representa o índice
+                utilizado para acessar cada posição do vetor.
+            </p>
+        </section>
+
+        <!-- ENTRADA DE DADOS -->
+        <section class="secao">
+            <h2>5. Inserindo dados pelo teclado</h2>
+
+            <p>
+                Podemos solicitar que o usuário informe os valores
+                que serão armazenados no vetor.
+            </p>
+
+            <h3>Exemplo prático: cadastro de notas</h3>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+
+    float notas[5];
+
+    for (int i = 0; i &lt; 5; i++) {
+
+        printf("Digite a nota do aluno %d: ", i + 1);
+        scanf("%f", &amp;notas[i]);
+
+    }
+
+    printf("\nNotas cadastradas:\n");
+
+    for (int i = 0; i &lt; 5; i++) {
+
+        printf("Aluno %d: %.2f\n", i + 1, notas[i]);
+
+    }
+
+    return 0;
+}</code></pre>
+
+            <p>
+                Nesse programa, utilizamos um primeiro laço para receber
+                as notas e um segundo laço para apresentar os valores
+                armazenados.
+            </p>
+        </section>
+
+        <!-- OPERAÇÕES -->
+        <section class="secao">
+            <h2>6. Realizando operações com vetores</h2>
+
+            <p>
+                Além de armazenar informações, podemos realizar
+                cálculos utilizando os elementos de um vetor.
+            </p>
+
+            <h3>Exemplo: calcular a média de cinco notas</h3>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+
+    float notas[5];
+    float soma = 0;
+    float media;
+
+    for (int i = 0; i &lt; 5; i++) {
+
+        printf("Digite a nota %d: ", i + 1);
+        scanf("%f", &amp;notas[i]);
+
+        soma += notas[i];
+    }
+
+    media = soma / 5;
+
+    printf("\nMedia da turma: %.2f\n", media);
+
+    return 0;
+}</code></pre>
+
+            <p>
+                A variável <strong>soma</strong> acumula os valores
+                informados. Ao final, dividimos o total pela quantidade
+                de notas para obter a média.
+            </p>
+        </section>
+
+        <!-- MATRIZES -->
+        <section class="secao">
+            <h2>7. O que são matrizes?</h2>
+
+            <p>
+                Uma matriz é uma estrutura de dados que permite armazenar
+                valores do mesmo tipo organizados em duas ou mais dimensões.
+            </p>
+
+            <p>
+                Nesta unidade, trabalharemos principalmente com matrizes
+                bidimensionais, organizadas em linhas e colunas.
+            </p>
+
+            <p>
+                Podemos imaginar uma matriz como uma tabela.
+            </p>
+
+            <h3>Exemplo:</h3>
+
+            <pre><code>int numeros[2][3];</code></pre>
+
+            <p>
+                Essa declaração cria uma matriz com duas linhas
+                e três colunas, totalizando seis elementos.
+            </p>
+
+            <p>Representação:</p>
+
+            <pre><code>        Colunas
+          0   1   2
+
+Linha 0   10  20  30
+Linha 1   40  50  60</code></pre>
+
+            <p>
+                Para acessar um elemento, utilizamos dois índices:
+                o primeiro representa a linha e o segundo representa
+                a coluna.
+            </p>
+        </section>
+
+        <!-- DECLARAÇÃO DE MATRIZ -->
+        <section class="secao">
+            <h2>8. Declarando e inicializando matrizes</h2>
+
+            <p>
+                A declaração de uma matriz bidimensional utiliza
+                dois tamanhos: quantidade de linhas e quantidade
+                de colunas.
+            </p>
+
+            <h3>Sintaxe:</h3>
+
+            <pre><code>tipo nome[linhas][colunas];</code></pre>
+
+            <h3>Exemplo:</h3>
+
+            <pre><code>int matriz[2][3] = {
+    {10, 20, 30},
+    {40, 50, 60}
+};</code></pre>
+
+            <p>
+                Para acessar o número 50, utilizamos:
+            </p>
+
+            <pre><code>matriz[1][1]</code></pre>
+
+            <p>
+                Lembre-se: os índices começam em zero.
+            </p>
+        </section>
+
+        <!-- PERCORRER MATRIZ -->
+        <section class="secao">
+            <h2>9. Percorrendo uma matriz</h2>
+
+            <p>
+                Para percorrer uma matriz, geralmente utilizamos
+                dois laços de repetição: um para as linhas e outro
+                para as colunas.
+            </p>
+
+            <h3>Exemplo:</h3>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+
+    int matriz[2][3] = {
+        {10, 20, 30},
+        {40, 50, 60}
+    };
+
+    for (int i = 0; i &lt; 2; i++) {
+
+        for (int j = 0; j &lt; 3; j++) {
+
+            printf("%d ", matriz[i][j]);
+
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}</code></pre>
+
+            <p><strong>Saída:</strong></p>
+
+            <pre><code>10 20 30
+40 50 60</code></pre>
+
+            <p>
+                O primeiro laço controla as linhas e o segundo
+                controla as colunas.
+            </p>
+        </section>
+
+        <!-- ENTRADA EM MATRIZ -->
+        <section class="secao">
+            <h2>10. Inserindo dados em uma matriz</h2>
+
+            <p>
+                Assim como nos vetores, podemos solicitar que o usuário
+                informe os valores de uma matriz.
+            </p>
+
+            <h3>Exemplo: preenchendo uma matriz 2 × 3</h3>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+
+    int matriz[2][3];
+
+    for (int i = 0; i &lt; 2; i++) {
+
+        for (int j = 0; j &lt; 3; j++) {
+
+            printf("Digite o valor da linha %d e coluna %d: ",
+                   i + 1, j + 1);
+
+            scanf("%d", &amp;matriz[i][j]);
+
+        }
+    }
+
+    printf("\nValores da matriz:\n");
+
+    for (int i = 0; i &lt; 2; i++) {
+
+        for (int j = 0; j &lt; 3; j++) {
+
+            printf("%d\t", matriz[i][j]);
+
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}</code></pre>
+
+            <p>
+                Nesse exemplo, utilizamos dois laços para preencher
+                a matriz e outros dois para apresentar os valores.
+            </p>
+        </section>
+
+        <!-- DIFERENÇAS -->
+        <section class="secao">
+            <h2>11. Diferenças entre vetores e matrizes</h2>
+
+            <p>
+                Embora sejam estruturas semelhantes, existem diferenças
+                importantes entre vetores e matrizes.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Vetor:</strong> organiza os elementos
+                    em uma única dimensão.
+                </li>
+                <li>
+                    <strong>Matriz:</strong> organiza os elementos
+                    em linhas e colunas.
+                </li>
+                <li>
+                    <strong>Vetor:</strong> utiliza um índice para
+                    acessar cada elemento.
+                </li>
+                <li>
+                    <strong>Matriz:</strong> utiliza dois índices
+                    para acessar cada elemento bidimensional.
+                </li>
+            </ul>
+        </section>
+
+        <!-- CUIDADOS -->
+        <section class="secao">
+            <h2>12. Cuidados importantes</h2>
+
+            <ul>
+                <li>
+                    Os índices de vetores e matrizes começam em zero.
+                </li>
+                <li>
+                    Não acesse posições fora dos limites declarados.
+                </li>
+                <li>
+                    Verifique se os laços utilizam os limites corretos.
+                </li>
+                <li>
+                    Utilize o tipo de dado adequado para cada informação.
+                </li>
+                <li>
+                    Inicialize as variáveis utilizadas nos cálculos.
+                </li>
+            </ul>
+
+            <p>
+                Em C, acessar posições fora dos limites de um vetor
+                ou matriz provoca comportamento indefinido.
+            </p>
+        </section>
+
+        <!-- EXERCÍCIOS -->
+        <section class="secao">
+            <h2>13. Exercícios de fixação</h2>
+
+            <h3>Exercício 1 — Cadastro de números</h3>
+
+            <p>
+                Desenvolva um programa que solicite ao usuário
+                cinco números inteiros, armazene-os em um vetor
+                e apresente todos os valores cadastrados.
+            </p>
+
+            <h3>Exercício 2 — Soma dos elementos</h3>
+
+            <p>
+                Crie um vetor com dez números inteiros.
+                Solicite os valores pelo teclado e calcule
+                a soma de todos os elementos.
+            </p>
+
+            <h3>Exercício 3 — Média de notas</h3>
+
+            <p>
+                Desenvolva um programa que armazene as notas
+                de cinco alunos em um vetor e calcule a média
+                geral da turma.
+            </p>
+
+            <h3>Exercício 4 — Maior e menor valor</h3>
+
+            <p>
+                Crie um vetor de dez números inteiros.
+                Ao final, apresente o maior e o menor valor
+                armazenado.
+            </p>
+
+            <h3>Exercício 5 — Cadastro de temperaturas</h3>
+
+            <p>
+                Armazene as temperaturas registradas durante
+                sete dias em um vetor. Calcule a média e
+                apresente os dias em que a temperatura ficou
+                acima da média.
+            </p>
+
+            <h3>Exercício 6 — Matriz 3 × 3</h3>
+
+            <p>
+                Desenvolva um programa que solicite nove números
+                inteiros, armazene-os em uma matriz 3 × 3
+                e apresente os valores organizados em linhas
+                e colunas.
+            </p>
+
+            <h3>Exercício 7 — Soma da matriz</h3>
+
+            <p>
+                Crie uma matriz 3 × 3, solicite os valores
+                pelo teclado e calcule a soma de todos os
+                seus elementos.
+            </p>
+
+            <h3>Exercício 8 — Diagonal principal</h3>
+
+            <p>
+                Desenvolva um programa que leia uma matriz
+                3 × 3 e apresente os elementos da diagonal principal.
+            </p>
+
+        </section>
+
+        <!-- DESAFIO -->
+        <section class="secao">
+            <h2>14. Desafio prático</h2>
+
+            <h3>Sistema de notas de uma turma</h3>
+
+            <p>
+                Desenvolva um programa em C para cadastrar as notas
+                de cinco alunos em duas avaliações.
+            </p>
+
+            <p>O programa deverá:</p>
+
+            <ol>
+                <li>Utilizar uma matriz para armazenar as notas.</li>
+                <li>Solicitar as duas notas de cada aluno.</li>
+                <li>Calcular a média individual de cada aluno.</li>
+                <li>Apresentar o resultado de cada estudante.</li>
+                <li>Informar quantos alunos foram aprovados.</li>
+            </ol>
+
+            <p>
+                Considere a média 7,0 como nota mínima para aprovação.
+            </p>
+
+            <p>
+                Utilize estruturas de repetição para preencher
+                e percorrer a matriz.
+            </p>
+        </section>
+
+        <!-- CONCLUSÃO -->
+        <section class="secao">
+            <h2>15. Conclusão</h2>
+
+            <p>
+                Vetores e matrizes são estruturas fundamentais
+                para armazenar e organizar conjuntos de informações.
+            </p>
+
+            <p>
+                Compreender essas estruturas é importante para
+                desenvolver programas mais organizados e resolver
+                problemas que envolvem grandes quantidades de dados.
+            </p>
+
+            <p>
+                Esses conhecimentos também serão utilizados no estudo
+                de listas sequenciais, listas encadeadas, pilhas
+                e filas.
+            </p>
+        </section>
+
+        <!-- NAVEGAÇÃO -->
+        <section class="secao">
+            <a href="../../index.html" class="botao">
+                Voltar à página inicial
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>
+                Material educacional para fins didáticos.
+                © <span id="ano-atual"></span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
