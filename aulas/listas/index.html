@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Material didático sobre listas sequenciais e encadeadas em C.">
+
+    <title>Listas | Estrutura de Dados</title>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container">
+
+            <h1>Estrutura de Dados</h1>
+
+            <p>
+                Curso Superior de Tecnologia em Análise e
+                Desenvolvimento de Sistemas
+            </p>
+
+            <nav>
+                <a href="../../index.html">Início</a>
+                <a href="../introducao/index.html">Introdução</a>
+                <a href="../ponteiros/index.html">Ponteiros</a>
+                <a href="../vetores-matrizes/index.html">Vetores e Matrizes</a>
+                <a href="index.html">Listas</a>
+                <a href="../../materiais/index.html">Materiais Didáticos</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+
+        <!-- APRESENTAÇÃO -->
+        <section class="secao">
+
+            <h2>Unidade 4 — Listas em Estrutura de Dados</h2>
+
+            <p>
+                As listas são estruturas de dados utilizadas para
+                armazenar e organizar conjuntos de elementos.
+                Elas permitem realizar operações como inserção,
+                remoção, consulta e atualização de informações.
+            </p>
+
+            <p>
+                Nesta unidade, estudaremos duas formas importantes
+                de implementação: listas sequenciais e listas
+                simplesmente encadeadas.
+            </p>
+
+        </section>
+
+
+        <!-- OBJETIVOS -->
+        <section class="secao">
+
+            <h2>1. Objetivos de aprendizagem</h2>
+
+            <p>Ao concluir esta unidade, você deverá ser capaz de:</p>
+
+            <ul>
+                <li>Compreender o conceito de lista como estrutura de dados.</li>
+                <li>Identificar as principais operações realizadas em listas.</li>
+                <li>Compreender a relação entre listas e TAD.</li>
+                <li>Implementar listas sequenciais utilizando vetores.</li>
+                <li>Utilizar ponteiros na construção de listas encadeadas.</li>
+                <li>Comparar as vantagens e limitações das implementações.</li>
+                <li>Desenvolver programas em C para manipulação de listas.</li>
+            </ul>
+
+        </section>
+
+
+        <!-- CONCEITO -->
+        <section class="secao">
+
+            <h2>2. O que são listas?</h2>
+
+            <p>
+                Uma lista é uma estrutura de dados que organiza
+                elementos em uma sequência. Cada elemento ocupa
+                uma posição lógica dentro dessa sequência.
+            </p>
+
+            <p>
+                Os elementos podem ser números, nomes, produtos,
+                notas de estudantes ou qualquer outro tipo de informação.
+            </p>
+
+            <h3>Exemplo de uma lista de números:</h3>
+
+            <pre><code>10 - 20 - 30 - 40 - 50</code></pre>
+
+            <p>
+                Nesse exemplo, temos uma lista contendo cinco
+                elementos inteiros organizados em sequência.
+            </p>
+
+            <h3>Exemplo de aplicação:</h3>
+
+            <p>
+                Imagine um sistema acadêmico que precisa armazenar
+                os nomes dos estudantes matriculados em uma turma.
+                Uma lista pode organizar esses nomes e permitir
+                a inclusão ou exclusão de estudantes.
+            </p>
+
+        </section>
+
+
+        <!-- TAD -->
+        <section class="secao">
+
+            <h2>3. Listas e Tipos Abstratos de Dados (TAD)</h2>
+
+            <p>
+                Uma lista também pode ser compreendida como um
+                Tipo Abstrato de Dados (TAD).
+            </p>
+
+            <p>
+                Nesse contexto, definimos quais operações podem
+                ser realizadas sobre a lista, sem necessariamente
+                expor os detalhes internos de sua implementação.
+            </p>
+
+            <h3>Operações fundamentais:</h3>
+
+            <ul>
+                <li><strong>Criar:</strong> inicializar uma lista vazia.</li>
+                <li><strong>Inserir:</strong> adicionar um elemento.</li>
+                <li><strong>Remover:</strong> retirar um elemento.</li>
+                <li><strong>Consultar:</strong> localizar um elemento.</li>
+                <li><strong>Listar:</strong> apresentar todos os elementos.</li>
+                <li><strong>Verificar se está vazia:</strong> identificar se existem elementos.</li>
+                <li><strong>Verificar se está cheia:</strong> verificar o limite de uma implementação com capacidade
+                    fixa.</li>
+            </ul>
+
+            <p>
+                O TAD define o comportamento esperado da lista.
+                A implementação pode utilizar vetores ou ponteiros,
+                por exemplo.
+            </p>
+
+        </section>
+
+
+        <!-- CLASSIFICAÇÃO -->
+        <section class="secao">
+
+            <h2>4. Formas de implementação de listas</h2>
+
+            <p>
+                Existem diferentes maneiras de implementar uma lista.
+                Nesta disciplina, estudaremos principalmente:
+            </p>
+
+            <h3>4.1 Lista sequencial</h3>
+
+            <p>
+                Armazena os elementos em posições consecutivas
+                de memória, normalmente utilizando um vetor.
+            </p>
+
+            <h3>4.2 Lista simplesmente encadeada</h3>
+
+            <p>
+                Organiza os elementos por meio de nós.
+                Cada nó armazena um dado e um ponteiro para
+                o próximo nó.
+            </p>
+
+            <h3>4.3 Lista duplamente encadeada</h3>
+
+            <p>
+                Cada nó possui dois ponteiros: um para o próximo
+                elemento e outro para o elemento anterior.
+            </p>
+
+            <h3>4.4 Lista circular</h3>
+
+            <p>
+                O último elemento aponta novamente para o primeiro,
+                formando uma estrutura circular.
+            </p>
+
+        </section>
+
+
+        <!-- LISTA SEQUENCIAL -->
+        <section class="secao">
+
+            <h2>5. Listas sequenciais</h2>
+
+            <p>
+                Uma lista sequencial utiliza um vetor para armazenar
+                os elementos. Sua capacidade normalmente é definida
+                durante a declaração da estrutura.
+            </p>
+
+            <h3>Exemplo em C:</h3>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+#define MAX 5
+
+int main() {
+
+    int lista[MAX] = {10, 20, 30, 40, 50};
+
+    for (int i = 0; i &lt; MAX; i++) {
+
+        printf("Posicao %d: %d\n", i, lista[i]);
+
+    }
+
+    return 0;
+}</code></pre>
+
+            <p>
+                O vetor armazena cinco elementos. Cada elemento
+                pode ser acessado diretamente por meio de seu índice.
+            </p>
+
+            <h3>Representação:</h3>
+
+            <pre><code>Indice:      0    1    2    3    4
+Elemento:   10   20   30   40   50</code></pre>
+
+            <p>
+                O primeiro elemento ocupa o índice zero e o último
+                ocupa o índice quatro.
+            </p>
+
+        </section>
+
+
+        <!-- OPERAÇÕES -->
+        <section class="secao">
+
+            <h2>6. Operações em listas sequenciais</h2>
+
+            <h3>6.1 Inserção de elementos</h3>
+
+            <p>
+                A inserção consiste em adicionar um novo elemento
+                à lista. Quando a inserção ocorre em uma posição
+                intermediária, precisamos deslocar os elementos
+                seguintes para abrir espaço.
+            </p>
+
+            <h3>Exemplo:</h3>
+
+            <pre><code>Lista inicial:
+
+10 - 20 - 40 - 50
+
+Inserindo o valor 30 na posição 2:
+
+10 - 20 - 30 - 40 - 50</code></pre>
+
+            <h3>6.2 Remoção de elementos</h3>
+
+            <p>
+                A remoção consiste em retirar um elemento da lista.
+                Em uma implementação sequencial, os elementos
+                posteriores precisam ser deslocados para ocupar
+                a posição liberada.
+            </p>
+
+            <h3>Exemplo:</h3>
+
+            <pre><code>Lista inicial:
+
+10 - 20 - 30 - 40 - 50
+
+Removendo o valor 30:
+
+10 - 20 - 40 - 50</code></pre>
+
+            <h3>6.3 Consulta de elementos</h3>
+
+            <p>
+                A consulta permite localizar um elemento
+                na lista e verificar sua posição.
+            </p>
+
+            <pre><code>int valor = 30;
+
+for (int i = 0; i &lt; quantidade; i++) {
+
+    if (lista[i] == valor) {
+        printf("Elemento encontrado na posicao %d", i);
+    }
+
+}</code></pre>
+
+        </section>
+
+
+        <!-- IMPLEMENTAÇÃO -->
+        <section class="secao">
+
+            <h2>7. Implementando uma lista sequencial em C</h2>
+
+            <p>
+                Vamos desenvolver uma implementação simples
+                de lista sequencial com operações de inserção,
+                exclusão e listagem.
+            </p>
+
+            <h3>Exemplo completo:</h3>
+
+            <pre><code>#include &lt;stdio.h&gt;
+
+#define MAX 10
+
+int lista[MAX];
+int quantidade = 0;
+
+void inserir(int valor) {
+
+    if (quantidade &lt; MAX) {
+
+        lista[quantidade] = valor;
+        quantidade++;
+
+        printf("Elemento inserido!\n");
+
+    } else {
+
+        printf("Lista cheia!\n");
+
+    }
+}
+
+void listar() {
+
+    if (quantidade == 0) {
+
+        printf("Lista vazia!\n");
+
+    } else {
+
+        for (int i = 0; i &lt; quantidade; i++) {
+
+            printf("%d ", lista[i]);
+
+        }
+
+        printf("\n");
+    }
+}
+
+void excluir(int valor) {
+
+    int posicao = -1;
+
+    for (int i = 0; i &lt; quantidade; i++) {
+
+        if (lista[i] == valor) {
+            posicao = i;
+            break;
+        }
+
+    }
+
+    if (posicao == -1) {
+
+        printf("Elemento nao encontrado!\n");
+
+    } else {
+
+        for (int i = posicao; i &lt; quantidade - 1; i++) {
+
+            lista[i] = lista[i + 1];
+
+        }
+
+        quantidade--;
+
+        printf("Elemento removido!\n");
+
+    }
+}
+
+int main() {
+
+    inserir(10);
+    inserir(20);
+    inserir(30);
+
+    printf("Lista atual: ");
+    listar();
+
+    excluir(20);
+
+    printf("Lista apos exclusao: ");
+    listar();
+
+    return 0;
+}</code></pre>
+
+            <p>
+                Nesse exemplo, utilizamos um vetor para armazenar
+                os elementos e uma variável chamada quantidade
+                para controlar quantos elementos estão atualmente
+                armazenados.
+            </p>
+
+            <p>
+                A função <strong>inserir()</strong> adiciona um elemento
+                ao final da lista, enquanto <strong>excluir()</strong>
+                procura um valor e remove sua ocorrência.
+            </p>
+
+        </section>
+
+
+        <!-- LISTA ENCADEADA -->
+        <section class="secao">
+
+            <h2>8. Listas simplesmente encadeadas</h2>
+
+            <p>
+                Uma lista simplesmente encadeada é composta por
+                elementos chamados nós.
+            </p>
+
+            <p>
+                Cada nó possui duas partes:
+            </p>
+
+            <ul>
+                <li><strong>Dado:</strong> informação armazenada.</li>
+                <li><strong>Ponteiro:</strong> endereço do próximo nó.</li>
+            </ul>
+
+            <h3>Estrutura de um nó em C:</h3>
+
+            <pre><code>typedef struct No {
+
+    int valor;
+
+    struct No *proximo;
+
+} No;</code></pre>
+
+            <p>
+                O campo <strong>valor</strong> armazena o dado,
+                enquanto <strong>proximo</strong> guarda o endereço
+                do próximo nó.
+            </p>
+
+            <h3>Representação de uma lista encadeada:</h3>
+
+            <pre><code>Inicio
+  |
+  v
+[10 | *] -> [20 | *] -> [30 | NULL]</code></pre>
+
+            <p>
+                O último nó aponta para NULL, indicando que
+                não existe outro elemento depois dele.
+            </p>
+
+        </section>
+
+
+        <!-- INSERÇÃO ENCADEADA -->
+        <section class="secao">
+
+            <h2>9. Exemplo de inserção em lista encadeada</h2>
+
+            <p>
+                Para inserir um elemento no início de uma lista
+                simplesmente encadeada, criamos um novo nó e
+                ajustamos os ponteiros.
+            </p>
+
+            <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct No {
+
+    int valor;
+    struct No *proximo;
+
+} No;
+
+void inserirInicio(No **inicio, int valor) {
+
+    No *novo = malloc(sizeof(No));
+
+    if (novo == NULL) {
+        printf("Erro ao alocar memoria!\n");
+        return;
+    }
+
+    novo-&gt;valor = valor;
+    novo-&gt;proximo = *inicio;
+
+    *inicio = novo;
+}
+
+void listar(No *inicio) {
+
+    No *atual = inicio;
+
+    while (atual != NULL) {
+
+        printf("%d -> ", atual-&gt;valor);
+
+        atual = atual-&gt;proximo;
+
+    }
+
+    printf("NULL\n");
+}
+
+void liberarLista(No *inicio) {
+
+    while (inicio != NULL) {
+
+        No *auxiliar = inicio;
+
+        inicio = inicio-&gt;proximo;
+
+        free(auxiliar);
+
+    }
+}
+
+int main() {
+
+    No *inicio = NULL;
+
+    inserirInicio(&amp;inicio, 30);
+    inserirInicio(&amp;inicio, 20);
+    inserirInicio(&amp;inicio, 10);
+
+    listar(inicio);
+
+    liberarLista(inicio);
+
+    return 0;
+}</code></pre>
+
+            <p><strong>Resultado esperado:</strong></p>
+
+            <pre><code>10 -> 20 -> 30 -> NULL</code></pre>
+
+            <p>
+                Observe que a função recebe o endereço do ponteiro
+                inicial para poder modificar o início da lista.
+            </p>
+
+        </section>
+
+
+        <!-- COMPARAÇÃO -->
+        <section class="secao">
+
+            <h2>10. Comparação entre listas sequenciais e encadeadas</h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <h3>Lista sequencial</h3>
+
+                    <ul>
+                        <li>Utiliza vetor.</li>
+                        <li>Armazenamento contíguo.</li>
+                        <li>Acesso direto por índice.</li>
+                        <li>Capacidade normalmente fixa.</li>
+                        <li>Inserções e remoções intermediárias exigem deslocamentos.</li>
+                    </ul>
+
+                </article>
+
+                <article class="card">
+
+                    <h3>Lista encadeada</h3>
+
+                    <ul>
+                        <li>Utiliza nós e ponteiros.</li>
+                        <li>Não exige memória contígua.</li>
+                        <li>O acesso é feito percorrendo os nós.</li>
+                        <li>Pode crescer dinamicamente.</li>
+                        <li>Inserções e remoções podem ser realizadas ajustando ponteiros.</li>
+                    </ul>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPLEXIDADE -->
+        <section class="secao">
+
+            <h2>11. Noções de complexidade das operações</h2>
+
+            <p>
+                A complexidade permite analisar como o custo de uma
+                operação varia conforme a quantidade de elementos
+                armazenados.
+            </p>
+
+            <p>
+                Considerando as implementações apresentadas,
+                temos as seguintes situações:
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Lista sequencial:</strong> acesso por índice
+                    em tempo constante, O(1).
+                </li>
+                <li>
+                    <strong>Lista sequencial:</strong> busca por valor
+                    em geral O(n).
+                </li>
+                <li>
+                    <strong>Lista encadeada:</strong> acesso a uma posição
+                    exige percorrer os nós, em geral O(n).
+                </li>
+                <li>
+                    <strong>Lista encadeada:</strong> inserção no início
+                    pode ocorrer em O(1).
+                </li>
+            </ul>
+
+            <p>
+                A complexidade de inserções e remoções depende da posição
+                da operação e de como a lista está implementada.
+            </p>
+
+        </section>
+
+
+        <!-- EXERCÍCIOS -->
+        <section class="secao">
+
+            <h2>12. Exercícios de fixação</h2>
+
+            <h3>Exercício 1 — Conceitos</h3>
+
+            <p>
+                Explique o que é uma lista e apresente três exemplos
+                de situações em que essa estrutura pode ser utilizada.
+            </p>
+
+            <h3>Exercício 2 — Operações</h3>
+
+            <p>
+                Explique as operações de inserção, remoção,
+                consulta e listagem.
+            </p>
+
+            <h3>Exercício 3 — Lista sequencial</h3>
+
+            <p>
+                Desenvolva um programa em C que armazene dez números
+                inteiros em um vetor e apresente todos os elementos.
+            </p>
+
+            <h3>Exercício 4 — Inserção</h3>
+
+            <p>
+                Modifique o programa de lista sequencial para permitir
+                que o usuário insira valores em uma posição escolhida.
+            </p>
+
+            <h3>Exercício 5 — Remoção</h3>
+
+            <p>
+                Implemente uma função que remova um elemento
+                de uma lista sequencial e desloque os elementos
+                posteriores.
+            </p>
+
+            <h3>Exercício 6 — Consulta</h3>
+
+            <p>
+                Crie uma função que receba um número inteiro
+                e informe se ele está presente na lista.
+            </p>
+
+            <h3>Exercício 7 — Lista encadeada</h3>
+
+            <p>
+                Declare uma estrutura de nó que armazene um número
+                inteiro e um ponteiro para o próximo nó.
+            </p>
+
+            <h3>Exercício 8 — Comparação</h3>
+
+            <p>
+                Explique duas vantagens e duas limitações
+                das listas sequenciais e encadeadas.
+            </p>
+
+        </section>
+
+
+        <!-- DESAFIO -->
+        <section class="secao">
+
+            <h2>13. Desafio prático — Sistema de cadastro</h2>
+
+            <p>
+                Desenvolva um programa em C que implemente
+                uma lista sequencial para cadastrar números inteiros.
+            </p>
+
+            <p>O programa deverá apresentar um menu com as opções:</p>
+
+            <ol>
+                <li>Inserir elemento.</li>
+                <li>Excluir elemento.</li>
+                <li>Consultar elemento.</li>
+                <li>Listar elementos.</li>
+                <li>Verificar se a lista está vazia.</li>
+                <li>Encerrar o programa.</li>
+            </ol>
+
+            <p>
+                Utilize funções para organizar as operações
+                e uma estrutura de repetição para manter
+                o menu em execução até que o usuário escolha
+                encerrar o programa.
+            </p>
+
+        </section>
+
+
+        <!-- CONCLUSÃO -->
+        <section class="secao">
+
+            <h2>14. Conclusão</h2>
+
+            <p>
+                As listas são estruturas fundamentais para
+                o armazenamento e a organização de dados.
+            </p>
+
+            <p>
+                Compreender suas diferentes implementações permite
+                identificar qual estrutura é mais adequada
+                para cada problema computacional.
+            </p>
+
+            <p>
+                O domínio de listas sequenciais e encadeadas
+                será importante para avançarmos no estudo
+                de pilhas, filas e outras estruturas de dados.
+            </p>
+
+        </section>
+
+
+        <!-- NAVEGAÇÃO -->
+        <section class="secao">
+
+            <a href="../../index.html" class="botao">
+                Voltar à página inicial
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="container">
+
+            <p>
+                Material educacional para fins didáticos.
+                © <span id="ano-atual"></span>
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
