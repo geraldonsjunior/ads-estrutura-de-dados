@@ -14,428 +14,454 @@
 <body>
 
     <!-- CABEÇALHO -->
-    <header>
-        <div class="container">
+    <header class="cabecalho">
+        <nav class="barra-navegacao container">
 
-            <h1>Estrutura de Dados I</h1>
+            <a href="../index.html" class="marca">
+                <span class="marca-icone">ED</span>
+                <span>
+                    <strong>Estrutura de Dados I</strong>
+                    <small>ADS · Material didático</small>
+                </span>
+            </a>
 
-            <p>
-                Curso Superior de Tecnologia em Análise e
-                Desenvolvimento de Sistemas
-            </p>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-            <nav>
+            <div class="menu" id="menu-principal">
                 <a href="../index.html">Início</a>
                 <a href="../aulas/introducao/index.html">Introdução</a>
                 <a href="../aulas/ponteiros/index.html">Ponteiros</a>
                 <a href="../aulas/vetores-matrizes/index.html">Vetores e Matrizes</a>
-                <a href="index.html">Materiais Didáticos</a>
-            </nav>
+                <a href="../aulas/listas/index.html">Listas</a>
+                <a href="index.html" class="link-ativo">Materiais</a>
+            </div>
 
-        </div>
+        </nav>
     </header>
 
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="container">
+    <!-- APRESENTAÇÃO -->
+    <main>
 
-        <!-- APRESENTAÇÃO -->
-        <section class="secao">
+        <section class="hero">
+            <div class="hero-grade container">
 
-            <h2>Materiais Didáticos</h2>
+                <div class="hero-texto">
 
-            <p>
-                Bem-vindo à biblioteca de materiais da disciplina
-                Estrutura de Dados I.
-            </p>
+                    <span class="etiqueta">Biblioteca da disciplina</span>
 
-            <p>
-                Nesta página estão disponíveis apostilas, tutoriais,
-                apresentações, planos de ensino e trabalhos
-                desenvolvidos pelos estudantes.
-            </p>
-
-            <p>
-                Clique nos botões para acessar ou baixar os arquivos.
-            </p>
-
-        </section>
-
-
-        <!-- APOSTILAS -->
-        <section class="secao">
-
-            <h2>1. Apostilas e materiais de estudo</h2>
-
-            <div class="cards">
-
-                <article class="card">
-
-                    <h3>Capítulo 1 — Introdução</h3>
+                    <h1>
+                        Materiais <span>Didáticos</span>
+                    </h1>
 
                     <p>
-                        Material introdutório da disciplina
-                        Estrutura de Dados I.
+                        Um espaço para acessar apostilas, tutoriais,
+                        apresentações, planos de ensino e projetos
+                        desenvolvidos durante a disciplina Estrutura
+                        de Dados I.
                     </p>
 
-                    <a href="materiais-pdf/capitulo%201%20-%20Introdu%C3%A7%C3%A3o.pdf" class="botao" download>
-                        Baixar PDF
+                    <a href="#apostilas" class="botao">
+                        Explorar materiais
                     </a>
 
-                </article>
+                </div>
 
+                <div class="hero-visual">
+                    <div class="janela-codigo">
 
-                <article class="card">
+                        <div class="janela-topo">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <small>Biblioteca_ED</small>
+                        </div>
 
-                    <h3>Capítulo 4 — TADs</h3>
+                        <div class="codigo-conteudo">
+                            <p><span class="codigo-comentario">// Materiais da disciplina</span></p>
+                            <p><span class="codigo-palavra">apostilas</span> = PDFs;</p>
+                            <p><span class="codigo-palavra">tutoriais</span> = C;</p>
+                            <p><span class="codigo-palavra">apresentacoes</span> = slides;</p>
+                            <p><span class="codigo-palavra">projetos</span> = pratica;</p>
+                            <br>
+                            <p><span class="codigo-comentario">// Aprender praticando!</span></p>
+                        </div>
 
-                    <p>
-                        Material de estudo sobre Tipos Abstratos
-                        de Dados.
-                    </p>
-
-                    <a href="materiais-pdf/capitulo%204%20-%20TADS.pdf" class="botao" download>
-                        Baixar PDF
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Capítulo 5 — Listas (Parte 1)</h3>
-
-                    <p>
-                        Material de estudo das páginas 81 a 139.
-                    </p>
-
-                    <a href="materiais-pdf/capitulo%205%20-%20Lista%20parte%2001%20p81-139.pdf" class="botao" download>
-                        Baixar PDF
-                    </a>
-
-                </article>
-
-
-                <article class="card">
-
-                    <h3>Capítulo 5 — Listas (Parte 2)</h3>
-
-                    <p>
-                        Material de estudo das páginas 140 a 193.
-                    </p>
-
-                    <a href="materiais-pdf/capitulo%205%20-%20Lista%20parte%2002%20p140-193.pdf" class="botao" download>
-                        Baixar PDF
-                    </a>
-
-                </article>
+                    </div>
+                </div>
 
             </div>
-
         </section>
 
 
-        <!-- TUTORIAIS C -->
-        <section class="secao">
+        <!-- CONTEÚDO DOS MATERIAIS -->
+        <div class="container">
 
-            <h2>2. Tutoriais de programação em C</h2>
 
-            <div class="cards">
+            <!-- 1. APOSTILAS -->
+            <section class="secao" id="apostilas">
 
-                <article class="card">
+                <span class="etiqueta">Estudo e consulta</span>
+                <h2>1. Apostilas e materiais de estudo</h2>
 
-                    <h3>Ponteiros e Structs — com Scanf</h3>
+                <p>
+                    Materiais de apoio para acompanhar os conteúdos
+                    trabalhados na disciplina.
+                </p>
 
-                    <p>
-                        Tutorial prático de programação em C
-                        utilizando entrada de dados pelo teclado.
-                    </p>
+                <div class="cards">
 
-                    <a href="materiais-pdf/Tutorial%20C%20-%20Ponteiros%20e%20Structs%20no%20VS%20%20com%20Scanf.pdf"
-                        class="botao" download>
-                        Baixar tutorial
-                    </a>
+                    <article class="card">
+                        <h3>Capítulo 1 — Introdução</h3>
 
-                </article>
+                        <p>
+                            Material introdutório da disciplina
+                            Estrutura de Dados I.
+                        </p>
 
+                        <a href="materiais-pdf/capitulo%201%20-%20Introdu%C3%A7%C3%A3o.pdf" class="botao" download>
+                            Baixar PDF
+                        </a>
+                    </article>
 
-                <article class="card">
 
-                    <h3>Ponteiros e Structs — sem Scanf</h3>
+                    <article class="card">
+                        <h3>Capítulo 4 — TADs</h3>
 
-                    <p>
-                        Tutorial de programação em C com exemplos
-                        de ponteiros e estruturas.
-                    </p>
+                        <p>
+                            Material de estudo sobre Tipos Abstratos
+                            de Dados.
+                        </p>
 
-                    <a href="materiais-pdf/Tutorial%20C%20-%20Ponteiros%20e%20Structs%20no%20VS%20sem%20Scanf.pdf"
-                        class="botao" download>
-                        Baixar tutorial
-                    </a>
+                        <a href="materiais-pdf/capitulo%204%20-%20TADS.pdf" class="botao" download>
+                            Baixar PDF
+                        </a>
+                    </article>
 
-                </article>
 
-            </div>
+                    <article class="card">
+                        <h3>Capítulo 5 — Listas (Parte 1)</h3>
 
-        </section>
+                        <p>
+                            Material de estudo das páginas 81 a 139.
+                        </p>
 
+                        <a href="materiais-pdf/capitulo%205%20-%20Lista%20parte%2001%20p81-139.pdf" class="botao"
+                            download>
+                            Baixar PDF
+                        </a>
+                    </article>
 
-        <!-- POWERPOINT -->
-        <section class="secao">
 
-            <h2>3. Apresentações e slides</h2>
+                    <article class="card">
+                        <h3>Capítulo 5 — Listas (Parte 2)</h3>
 
-            <div class="cards">
+                        <p>
+                            Material de estudo das páginas 140 a 193.
+                        </p>
 
-                <article class="card">
+                        <a href="materiais-pdf/capitulo%205%20-%20Lista%20parte%2002%20p140-193.pdf" class="botao"
+                            download>
+                            Baixar PDF
+                        </a>
+                    </article>
 
-                    <h3>Lista Sequencial Estática</h3>
+                </div>
 
-                    <p>
-                        Apresentação animada sobre implementação
-                        de listas sequenciais estáticas.
-                    </p>
+            </section>
 
-                    <a href="materiais-pptx/Lista-sequencial-estatica%20animado.pptx" class="botao" download>
-                        Baixar apresentação
-                    </a>
 
-                </article>
+            <!-- 2. TUTORIAIS C -->
+            <section class="secao">
 
-            </div>
+                <span class="etiqueta">Programação</span>
+                <h2>2. Tutoriais de programação em C</h2>
 
-        </section>
+                <p>
+                    Tutoriais práticos para desenvolver habilidades
+                    de programação utilizando a linguagem C.
+                </p>
 
+                <div class="cards">
 
-        <!-- PLANO DE ENSINO -->
-        <section class="secao">
+                    <article class="card">
+                        <h3>Ponteiros e Structs — com Scanf</h3>
 
-            <h2>4. Plano de Ensino</h2>
+                        <p>
+                            Tutorial prático de programação em C
+                            utilizando entrada de dados pelo teclado.
+                        </p>
 
-            <div class="cards">
+                        <a href="materiais-pdf/Tutorial%20C%20-%20Ponteiros%20e%20Structs%20no%20VS%20%20com%20Scanf.pdf"
+                            class="botao" download>
+                            Baixar tutorial
+                        </a>
+                    </article>
 
-                <article class="card">
 
-                    <h3>Plano de Ensino — Estrutura de Dados I</h3>
+                    <article class="card">
+                        <h3>Ponteiros e Structs — sem Scanf</h3>
 
-                    <p>
-                        Documento de planejamento da disciplina.
-                    </p>
+                        <p>
+                            Tutorial de programação em C com exemplos
+                            de ponteiros e estruturas.
+                        </p>
 
-                    <a href="Plano%20de%20Aula/Plano%20de%20Ensino%20de%20Estrutura%20de%20Dados%20I.pdf" class="botao"
-                        download>
-                        Baixar plano de ensino
-                    </a>
+                        <a href="materiais-pdf/Tutorial%20C%20-%20Ponteiros%20e%20Structs%20no%20VS%20sem%20Scanf.pdf"
+                            class="botao" download>
+                            Baixar tutorial
+                        </a>
+                    </article>
 
-                </article>
+                </div>
 
-            </div>
+            </section>
 
-        </section>
 
+            <!-- 3. APRESENTAÇÕES -->
+            <section class="secao">
 
-        <!-- AVALIAÇÃO 1 -->
-        <section class="secao">
+                <span class="etiqueta">Aulas e apresentações</span>
+                <h2>3. Apresentações e slides</h2>
 
-            <h2>5. Avaliação 1 — Trabalhos das equipes</h2>
+                <div class="cards">
 
-            <p>
-                Trabalhos desenvolvidos pelos estudantes
-                na primeira avaliação da disciplina.
-            </p>
+                    <article class="card">
+                        <h3>Lista Sequencial Estática</h3>
 
-            <div class="cards">
+                        <p>
+                            Apresentação animada sobre implementação
+                            de listas sequenciais estáticas.
+                        </p>
 
-                <article class="card">
+                        <a href="materiais-pptx/Lista-sequencial-estatica%20animado.pptx" class="botao" download>
+                            Baixar apresentação
+                        </a>
+                    </article>
 
-                    <h3>Grupo 1 — Aluno</h3>
+                </div>
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Grupo_1_Aluno.pdf" class="botao" download>
-                        Baixar trabalho
-                    </a>
+            </section>
 
-                </article>
 
+            <!-- 4. PLANO DE ENSINO -->
+            <section class="secao">
 
-                <article class="card">
+                <span class="etiqueta">Organização acadêmica</span>
+                <h2>4. Plano de Ensino</h2>
 
-                    <h3>Grupo 2 — Produto</h3>
+                <div class="cards">
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Grupo_2_Produto.pdf" class="botao" download>
-                        Baixar trabalho
-                    </a>
+                    <article class="card">
+                        <h3>Plano de Ensino — Estrutura de Dados I</h3>
 
-                </article>
+                        <p>
+                            Documento de planejamento da disciplina.
+                        </p>
 
+                        <a href="Plano%20de%20Aula/Plano%20de%20Ensino%20de%20Estrutura%20de%20Dados%20I.pdf"
+                            class="botao" download>
+                            Baixar plano de ensino
+                        </a>
+                    </article>
 
-                <article class="card">
+                </div>
 
-                    <h3>Grupo 3 — Livro</h3>
+            </section>
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Grupo_3_Livro.pdf" class="botao" download>
-                        Baixar trabalho
-                    </a>
 
-                </article>
+            <!-- 5. AVALIAÇÃO 1 -->
+            <section class="secao">
 
+                <span class="etiqueta">Produção dos estudantes</span>
+                <h2>5. Avaliação 1 — Trabalhos das equipes</h2>
 
-                <article class="card">
+                <p>
+                    Trabalhos desenvolvidos pelos estudantes
+                    na primeira avaliação da disciplina.
+                </p>
 
-                    <h3>Grupo 4 — Paciente</h3>
+                <div class="cards">
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Grupo_4_Paciente.pdf" class="botao" download>
-                        Baixar trabalho
-                    </a>
+                    <article class="card">
+                        <h3>Grupo 1 — Aluno</h3>
 
-                </article>
+                        <a href="Avalia%C3%A7%C3%A3o1/Grupo_1_Aluno.pdf" class="botao" download>
+                            Baixar trabalho
+                        </a>
+                    </article>
 
 
-                <article class="card">
+                    <article class="card">
+                        <h3>Grupo 2 — Produto</h3>
 
-                    <h3>Grupo 5 — Veículo</h3>
+                        <a href="Avalia%C3%A7%C3%A3o1/Grupo_2_Produto.pdf" class="botao" download>
+                            Baixar trabalho
+                        </a>
+                    </article>
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Grupo_5_Veiculo.pdf" class="botao" download>
-                        Baixar trabalho
-                    </a>
 
-                </article>
+                    <article class="card">
+                        <h3>Grupo 3 — Livro</h3>
 
+                        <a href="Avalia%C3%A7%C3%A3o1/Grupo_3_Livro.pdf" class="botao" download>
+                            Baixar trabalho
+                        </a>
+                    </article>
 
-                <article class="card">
 
-                    <h3>Grupo 6 — Pedido</h3>
+                    <article class="card">
+                        <h3>Grupo 4 — Paciente</h3>
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Grupo_6_Pedido.pdf" class="botao" download>
-                        Baixar trabalho
-                    </a>
+                        <a href="Avalia%C3%A7%C3%A3o1/Grupo_4_Paciente.pdf" class="botao" download>
+                            Baixar trabalho
+                        </a>
+                    </article>
 
-                </article>
 
-            </div>
+                    <article class="card">
+                        <h3>Grupo 5 — Veículo</h3>
 
-        </section>
+                        <a href="Avalia%C3%A7%C3%A3o1/Grupo_5_Veiculo.pdf" class="botao" download>
+                            Baixar trabalho
+                        </a>
+                    </article>
 
-        <!-- PROJETO LISTA SEQUENCIAL ESTÁTICA -->
-        <section class="secao">
 
-            <h2>6. Projeto Prático — Lista Sequencial Estática</h2>
+                    <article class="card">
+                        <h3>Grupo 6 — Pedido</h3>
 
-            <p>
-                Projeto desenvolvido em linguagem C para demonstrar
-                a implementação de uma lista sequencial estática.
-                O código está organizado em arquivos separados,
-                utilizando modularização.
-            </p>
+                        <a href="Avalia%C3%A7%C3%A3o1/Grupo_6_Pedido.pdf" class="botao" download>
+                            Baixar trabalho
+                        </a>
+                    </article>
 
-            <div class="cards">
+                </div>
 
-                <article class="card">
+            </section>
 
-                    <h3>ListaSequencial.c</h3>
 
-                    <p>
-                        Arquivo de implementação das operações
-                        da lista sequencial.
-                    </p>
+            <!-- 6. PROJETO LISTA SEQUENCIAL -->
+            <section class="secao">
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Modelo%20do%20projeto%20de%20lista/projeto-lista-estatica/ListaSequencial.c"
-                        class="botao" download>
-                        Baixar arquivo .c
-                    </a>
+                <span class="etiqueta">Prática de programação</span>
+                <h2>6. Projeto Prático — Lista Sequencial Estática</h2>
 
-                </article>
+                <p>
+                    Projeto desenvolvido em linguagem C para demonstrar
+                    a implementação de uma lista sequencial estática.
+                    O código está organizado em arquivos separados,
+                    utilizando modularização.
+                </p>
 
+                <div class="cards">
 
-                <article class="card">
+                    <article class="card">
+                        <h3>ListaSequencial.c</h3>
 
-                    <h3>ListaSequencial.h</h3>
+                        <p>
+                            Arquivo de implementação das operações
+                            da lista sequencial.
+                        </p>
 
-                    <p>
-                        Arquivo de cabeçalho com as declarações
-                        e definições utilizadas pelo projeto.
-                    </p>
+                        <a href="Avalia%C3%A7%C3%A3o1/Modelo%20do%20projeto%20de%20lista/projeto-lista-estatica/ListaSequencial.c"
+                            class="botao" download>
+                            Baixar arquivo .c
+                        </a>
+                    </article>
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Modelo%20do%20projeto%20de%20lista/projeto-lista-estatica/ListaSequencial.h"
-                        class="botao" download>
-                        Baixar arquivo .h
-                    </a>
 
-                </article>
+                    <article class="card">
+                        <h3>ListaSequencial.h</h3>
 
+                        <p>
+                            Arquivo de cabeçalho com as declarações
+                            e definições utilizadas pelo projeto.
+                        </p>
 
-                <article class="card">
+                        <a href="Avalia%C3%A7%C3%A3o1/Modelo%20do%20projeto%20de%20lista/projeto-lista-estatica/ListaSequencial.h"
+                            class="botao" download>
+                            Baixar arquivo .h
+                        </a>
+                    </article>
 
-                    <h3>main.c</h3>
 
-                    <p>
-                        Programa principal responsável por executar
-                        e testar as operações da lista.
-                    </p>
+                    <article class="card">
+                        <h3>main.c</h3>
 
-                    <a href="Avalia%C3%A7%C3%A3o1/Modelo%20do%20projeto%20de%20lista/projeto-lista-estatica/main.c"
-                        class="botao" download>
-                        Baixar arquivo .c
-                    </a>
+                        <p>
+                            Programa principal responsável por executar
+                            e testar as operações da lista.
+                        </p>
 
-                </article>
+                        <a href="Avalia%C3%A7%C3%A3o1/Modelo%20do%20projeto%20de%20lista/projeto-lista-estatica/main.c"
+                            class="botao" download>
+                            Baixar arquivo .c
+                        </a>
+                    </article>
 
-            </div>
+                </div>
 
-        </section>
+            </section>
 
 
+            <!-- 7. ORIENTAÇÕES -->
+            <section class="secao">
 
-        <!-- ORIENTAÇÕES -->
-        <section class="secao">
+                <span class="etiqueta">Para aproveitar os materiais</span>
+                <h2>7. Orientações aos estudantes</h2>
 
-            <h2>7. Orientações aos estudantes</h2>
+                <div class="card">
 
-            <ul>
+                    <ul>
+                        <li>
+                            Consulte os materiais relacionados ao conteúdo
+                            estudado em sala de aula.
+                        </li>
 
-                <li>
-                    Consulte os materiais relacionados ao conteúdo
-                    estudado em sala de aula.
-                </li>
+                        <li>
+                            Baixe as apostilas para acompanhar as atividades.
+                        </li>
 
-                <li>
-                    Baixe as apostilas para acompanhar as atividades.
-                </li>
+                        <li>
+                            Pratique os exemplos utilizando a linguagem C.
+                        </li>
 
-                <li>
-                    Pratique os exemplos utilizando a linguagem C.
-                </li>
+                        <li>
+                            Execute os programas e experimente modificar
+                            os códigos apresentados.
+                        </li>
 
-                <li>
-                    Execute os programas e experimente modificar
-                    os códigos apresentados.
-                </li>
+                        <li>
+                            Utilize os materiais como apoio aos estudos
+                            e às avaliações.
+                        </li>
+                    </ul>
 
-                <li>
-                    Utilize os materiais como apoio aos estudos
-                    e às avaliações.
-                </li>
+                </div>
 
-            </ul>
+            </section>
 
-        </section>
 
+            <!-- VOLTAR -->
+            <section class="secao">
+                <a href="../index.html" class="botao">
+                    Voltar à página inicial
+                </a>
+            </section>
 
-        <!-- VOLTAR -->
-        <section class="secao">
-
-            <a href="../index.html" class="botao">
-                Voltar à página inicial
-            </a>
-
-        </section>
+        </div>
 
     </main>
 
 
     <!-- RODAPÉ -->
-    <footer>
-
-        <div class="container">
+    <footer class="rodape">
+        <div class="rodape-conteudo container">
 
             <p>
                 Material educacional para fins didáticos.
@@ -443,7 +469,6 @@
             </p>
 
         </div>
-
     </footer>
 
 </body>

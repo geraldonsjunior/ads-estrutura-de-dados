@@ -5,9 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Material didático da disciplina Estrutura de Dados para o curso de Análise e Desenvolvimento de Sistemas.">
+        content="Ambiente de aprendizagem da disciplina Estrutura de Dados I, do curso de Análise e Desenvolvimento de Sistemas.">
+    <meta name="theme-color" content="#101d35">
 
     <title>Estrutura de Dados I | ADS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
@@ -15,149 +22,360 @@
 
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Estrutura de Dados I</h1>
-            <p>Curso de Análise e Desenvolvimento de Sistemas</p>
+    <header class="cabecalho">
+        <div class="container barra-navegacao">
 
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#disciplina">A disciplina</a></li>
-                    <li><a href="#conteudos">Conteúdos</a></li>
-                    <li><a href="materiais/index.html">Materiais Didáticos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                </ul>
+            <a class="marca" href="#inicio">
+                <span class="marca-icone">&lt;/&gt;</span>
+                <span class="marca-texto">ESTRUTURA DE DADOS I</span>
+            </a>
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"
+                aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="menu" id="menu-principal">
+                <a href="#inicio">Início</a>
+                <a href="#disciplina">A disciplina</a>
+                <a href="#conteudos">Conteúdos</a>
+                <a href="materiais/index.html">Materiais</a>
+                <a href="#sobre">Sobre</a>
             </nav>
+
         </div>
     </header>
 
     <main>
 
-        <section id="inicio" class="destaque">
+        <!-- APRESENTAÇÃO PRINCIPAL -->
+        <section class="hero" id="inicio">
+
+            <div class="hero-grade container">
+
+                <div class="hero-texto">
+
+                    <span class="sobretitulo">
+                        <span class="ponto"></span>
+                        ANÁLISE E DESENVOLVIMENTO DE SISTEMAS
+                    </span>
+
+                    <h1>
+                        Entenda os dados.
+                        <br>
+                        <span>Construa soluções.</span>
+                    </h1>
+
+                    <p class="hero-descricao">
+                        Explore como os dados são organizados na memória,
+                        conheça estruturas fundamentais e desenvolva
+                        soluções práticas utilizando a linguagem C.
+                    </p>
+
+                    <div class="hero-acoes">
+                        <a class="botao-principal" href="#conteudos">
+                            Explorar conteúdos →
+                        </a>
+
+                        <a class="link-secundario" href="#disciplina">
+                            Conheça a disciplina
+                        </a>
+                    </div>
+
+                    <div class="hero-nota">
+                        Conceitos, exemplos de código e prática
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="janela-codigo">
+
+                        <div class="janela-topo">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <span>estrutura.c</span>
+                        </div>
+
+                        <pre><code><span class="codigo-comentario">// Organizando dados</span>
+
+<span class="codigo-palavra">typedef struct</span> {
+    <span class="codigo-funcao">int</span> codigo;
+    <span class="codigo-funcao">float</span> valor;
+} Produto;
+
+<span class="codigo-palavra">int</span> main() {
+    Produto item;
+
+    item.codigo = 101;
+
+    <span class="codigo-palavra">return</span> 0;
+}</code></pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-rodape">
+                <span>APRENDIZAGEM PROGRESSIVA</span>
+                <span>DO CONCEITO À IMPLEMENTAÇÃO</span>
+            </div>
+
+        </section>
+
+        <!-- SOBRE A DISCIPLINA -->
+        <section class="secao disciplina" id="disciplina">
+
+            <div class="container disciplina-grid">
+
+                <div class="titulo-secao">
+
+                    <span class="sobretitulo">SOBRE A DISCIPLINA</span>
+
+                    <h2>
+                        Uma base sólida para
+                        programar melhor.
+                    </h2>
+
+                    <p class="texto-apoio">
+                        Compreender estruturas de dados é aprender
+                        a organizar informações e escolher maneiras
+                        adequadas de resolver problemas computacionais.
+                    </p>
+
+                </div>
+
+                <div class="disciplina-texto">
+
+                    <p>
+                        A disciplina de <strong>Estrutura de Dados I</strong>
+                        desenvolve conhecimentos e habilidades fundamentais
+                        para a organização, o armazenamento, o acesso e a
+                        manipulação eficiente de dados em programas
+                        computacionais.
+                    </p>
+
+                    <p>
+                        Ao longo dos estudos, você utilizará a linguagem C
+                        para compreender como os dados são organizados na
+                        memória e como os algoritmos podem ser construídos
+                        para resolver problemas de maneira clara e eficiente.
+                    </p>
+
+                    <p>
+                        O percurso inclui conceitos como ponteiros,
+                        registros e alocação dinâmica de memória, além
+                        de estruturas como listas encadeadas, pilhas e filas.
+                        Também serão explorados algoritmos de pesquisa
+                        e ordenação.
+                    </p>
+
+                    <div class="destaque-frase">
+                        <p>
+                            Mais do que conhecer estruturas,
+                            o objetivo é saber quando e como utilizá-las.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTEÚDOS -->
+        <section class="secao conteudos" id="conteudos">
+
             <div class="container">
-                <h2>Aprenda Estrutura de Dados na prática!</h2>
 
-                <p>
-                    Explore conceitos fundamentais da programação,
-                    compreenda como os dados são organizados e desenvolva
-                    soluções utilizando a linguagem C.
-                </p>
+                <div class="cabecalho-conteudos">
 
-                <a href="#conteudos" class="botao">
-                    Explorar conteúdos
+                    <div>
+                        <span class="sobretitulo">TRILHA DE APRENDIZAGEM</span>
+
+                        <h2>Explore os conteúdos</h2>
+
+                        <p class="texto-apoio">
+                            Avance por unidades e construa seu conhecimento
+                            passo a passo.
+                        </p>
+                    </div>
+
+                    <span class="contador-conteudos">06 UNIDADES</span>
+
+                </div>
+
+                <div class="cards">
+
+                    <article class="card">
+                        <div class="card-topo">
+                            <span class="numero-card">01</span>
+                            <span class="icone-card">⌘</span>
+                        </div>
+
+                        <h3>Introdução</h3>
+
+                        <p>
+                            Conceitos básicos, importância, aplicações
+                            e classificação das estruturas de dados.
+                        </p>
+
+                        <a href="aulas/introducao/index.html" class="card-link">
+                            Acessar unidade →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-topo">
+                            <span class="numero-card">02</span>
+                            <span class="icone-card">＊</span>
+                        </div>
+
+                        <h3>Ponteiros</h3>
+
+                        <p>
+                            Endereços de memória, declaração,
+                            manipulação e utilização de ponteiros em C.
+                        </p>
+
+                        <a href="aulas/ponteiros/index.html" class="card-link">
+                            Acessar unidade →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-topo">
+                            <span class="numero-card">03</span>
+                            <span class="icone-card">▦</span>
+                        </div>
+
+                        <h3>Vetores e Matrizes</h3>
+
+                        <p>
+                            Organização, armazenamento e manipulação
+                            de conjuntos de dados.
+                        </p>
+
+                        <a href="aulas/vetores-matrizes/index.html" class="card-link">
+                            Acessar unidade →
+                        </a>
+                    </article>
+
+                    <article class="card">
+                        <div class="card-topo">
+                            <span class="numero-card">04</span>
+                            <span class="icone-card">⇄</span>
+                        </div>
+
+                        <h3>Listas</h3>
+
+                        <p>
+                            Listas sequenciais e listas simplesmente,
+                            duplamente e circularmente encadeadas.
+                        </p>
+
+                        <a href="aulas/listas/index.html" class="card-link">
+                            Acessar unidade →
+                        </a>
+                    </article>
+
+                    <article class="card card-em-breve">
+                        <div class="card-topo">
+                            <span class="numero-card">05</span>
+                            <span class="status-card">EM BREVE</span>
+                        </div>
+
+                        <h3>Filas e Pilhas</h3>
+
+                        <p>
+                            Estruturas lineares, operações fundamentais
+                            e aplicações práticas.
+                        </p>
+
+                        <span class="card-indisponivel">
+                            Conteúdo em preparação
+                        </span>
+                    </article>
+
+                    <article class="card card-em-breve">
+                        <div class="card-topo">
+                            <span class="numero-card">06</span>
+                            <span class="status-card">EM BREVE</span>
+                        </div>
+
+                        <h3>Ordenação e Busca</h3>
+
+                        <p>
+                            Algoritmos de pesquisa e ordenação para
+                            localizar e organizar informações.
+                        </p>
+
+                        <span class="card-indisponivel">
+                            Conteúdo em preparação
+                        </span>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FAIXA FINAL -->
+        <section class="faixa-pratica" id="sobre">
+
+            <div class="container faixa-conteudo">
+
+                <div class="faixa-simbolo">{ }</div>
+
+                <div>
+                    <span class="etiqueta-clara">APRENDER FAZENDO</span>
+
+                    <h2>Conhecimento que vira código.</h2>
+
+                    <p>
+                        Este ambiente reúne materiais didáticos,
+                        exemplos de código, exercícios e atividades
+                        práticas para apoiar sua jornada em
+                        Estrutura de Dados.
+                    </p>
+                </div>
+
+                <a class="botao-claro" href="materiais/index.html">
+                    Ver materiais →
                 </a>
-            </div>
-        </section>
-
-        <section id="disciplina" class="container secao">
-            <h2>Sobre a disciplina</h2>
-
-            <p>
-                A disciplina de <strong>Estrutura de Dados I</strong> tem como
-                finalidade desenvolver conhecimentos e habilidades fundamentais
-                para a organização, o armazenamento, o acesso e a manipulação
-                eficiente de dados em programas computacionais.
-            </p>
-
-            <p>
-                Ao longo da disciplina, os estudantes irão explorar diferentes
-                estruturas de dados, utilizando a linguagem de programação C
-                para compreender como os dados são organizados na memória e
-                como os algoritmos podem ser desenvolvidos para resolver
-                problemas computacionais de maneira eficiente.
-            </p>
-
-            <p>
-                O estudo envolve desde conceitos fundamentais, como ponteiros,
-                registros e alocação dinâmica de memória, até estruturas mais
-                elaboradas, como listas encadeadas, pilhas e filas, além de
-                algoritmos de pesquisa e ordenação.
-            </p>
-        </section>
-
-        <section id="conteudos" class="container secao">
-            <h2>Conteúdos da disciplina</h2>
-
-            <div class="cards">
-
-                <article class="card">
-                    <h3>Introdução</h3>
-                    <p>
-                        Conceitos básicos, importância e classificação
-                        das estruturas de dados.
-                    </p>
-                    <a href="aulas/introducao/index.html" class="botao">
-                        Acessar unidade
-                    </a>
-                </article>
-
-                <article class="card">
-                    <h3>Ponteiros</h3>
-
-                    <p>
-                        Estudo dos endereços de memória, declaração,
-                        manipulação e utilização de ponteiros em C.
-                    </p>
-
-                    <a href="aulas/ponteiros/index.html" class="botao">
-                        Acessar unidade
-                    </a>
-                </article>
-
-                <article class="card">
-                    <h3>Vetores e Matrizes</h3>
-                    <p>Organização e manipulação de dados em coleções.</p>
-                    <a href="aulas/vetores-matrizes/index.html" class="botao">
-                        Acessar unidade
-                    </a>
-                </article>
-
-                <article class="card">
-                    <h3>Listas</h3>
-                    <p>
-                        Estude as estruturas de dados lineares,
-                        explorando listas sequenciais e listas
-                        simplesmente, duplamente e circularmente
-                        encadeadas.
-                    </p>
-
-                    <a href="aulas/listas/index.html" class="botao">
-                        Acessar conteúdo
-                    </a>
-                </article>
-
-                <article class="card">
-                    <h3>Filas e Pilhas</h3>
-                    <p>Estruturas lineares e suas aplicações.</p>
-                </article>
-
-                <article class="card">
-                    <h3>Ordenação e Busca </h3>
-                    <p>Busca, ordenação e resolução de problemas.</p>
-                </article>
 
             </div>
-        </section>
 
-        <section id="sobre" class="secao sobre">
-            <div class="container">
-                <h2>Aprender fazendo</h2>
-                <p>
-                    Este espaço reúne materiais didáticos, exemplos
-                    de código, exercícios e atividades práticas para
-                    apoiar o aprendizado de Estrutura de Dados.
-                </p>
-            </div>
         </section>
 
     </main>
 
-    <footer>
-        <div class="container">
-            <p>Estrutura de Dados I | Análise e Desenvolvimento de Sistemas</p>
-            <p>Material educacional para fins didáticos. © <span id="ano-atual"></span></p>
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+
+        <div class="container rodape-conteudo">
+
+            <a class="marca marca-rodape" href="#inicio">
+                <span class="marca-icone">&lt;/&gt;</span>
+                <span class="marca-texto">ESTRUTURA DE DADOS I</span>
+            </a>
+
+            <p>Material educacional para fins didáticos.</p>
+
+            <p>
+                © <span id="ano-atual"></span>
+                · Análise e Desenvolvimento de Sistemas
+            </p>
+
         </div>
+
     </footer>
 
 </body>

@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vetores e Matrizes em C | Estrutura de Dados I</title>
+    <meta name="description" content="Material didático sobre vetores e matrizes na linguagem C.">
+
+    <title>Vetores e Matrizes | Estrutura de Dados I</title>
 
     <link rel="stylesheet" href="../../css/style.css">
     <script src="../../js/script.js" defer></script>
@@ -13,57 +15,132 @@
 
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Estrutura de Dados I</h1>
-            <p>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</p>
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="barra-navegacao container">
+
+            <a href="../../index.html" class="marca">
+                <span>ED</span>
+                <div>
+                    <strong>Estrutura de Dados</strong>
+                    <small>ADS · Linguagem C</small>
+                </div>
+            </a>
+
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <nav>
-                <a href="../../index.html">Início</a>
-                <a href="../introducao/index.html">Introdução</a>
-                <a href="../ponteiros/index.html">Ponteiros</a>
-                <a href="index.html">Vetores e Matrizes</a>
+                <ul class="menu" id="menu-principal">
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="../introducao/index.html">Introdução</a></li>
+                    <li><a href="../ponteiros/index.html">Ponteiros</a></li>
+                    <li><a href="#vetores">Vetores e Matrizes</a></li>
+                    <li><a href="../listas/index.html">Listas</a></li>
+                    <li><a href="#exercicios">Exercícios</a></li>
+                </ul>
             </nav>
+
         </div>
     </header>
 
-    <main class="container">
+
+    <main>
 
         <!-- APRESENTAÇÃO -->
-        <section class="secao">
-            <h2>Unidade 3 — Vetores e Matrizes em C</h2>
+        <section class="hero">
+            <div class="hero-grade container">
 
-            <p>
-                Nesta unidade, estudaremos duas estruturas fundamentais
-                para armazenar e organizar conjuntos de dados:
-                os vetores e as matrizes.
-            </p>
+                <div class="hero-texto">
 
-            <p>
-                Aprenderemos a declarar essas estruturas, inserir dados
-                pelo teclado, percorrer seus elementos e realizar
-                operações utilizando laços de repetição.
-            </p>
+                    <span class="sobretitulo">
+                        UNIDADE 03 · ORGANIZAÇÃO DE DADOS
+                    </span>
+
+                    <h1>
+                        Vetores e
+                        <span>Matrizes em C</span>
+                    </h1>
+
+                    <p>
+                        Aprenda a armazenar, organizar e manipular
+                        conjuntos de dados utilizando vetores e matrizes.
+                        Pratique a entrada de dados pelo teclado,
+                        percorrendo elementos e realizando operações.
+                    </p>
+
+                    <a href="#vetores" class="botao">
+                        Começar a estudar
+                    </a>
+
+                </div>
+
+                <div class="hero-visual">
+                    <div class="janela-codigo">
+
+                        <div class="janela-topo">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <small>vetores.c</small>
+                        </div>
+
+                        <pre><code><span class="codigo-palavra">int</span> numeros[5] = {
+    10, 20, 30, 40, 50
+};
+
+<span class="codigo-palavra">for</span> (<span class="codigo-palavra">int</span> i = 0; i &lt; 5; i++) {
+    <span class="codigo-funcao">printf</span>(
+        "%d\n", numeros[i]
+    );
+}</code></pre>
+
+                    </div>
+                </div>
+
+            </div>
         </section>
 
+
         <!-- OBJETIVOS -->
-        <section class="secao">
-            <h2>Objetivos de aprendizagem</h2>
+        <section class="secao container">
+
+            <span class="sobretitulo">OBJETIVOS DE APRENDIZAGEM</span>
+
+            <h2>O que você aprenderá?</h2>
 
             <p>Ao concluir esta unidade, você deverá ser capaz de:</p>
 
-            <ul>
-                <li>Compreender o conceito de vetor e matriz.</li>
-                <li>Declarar e inicializar vetores em C.</li>
-                <li>Armazenar e acessar elementos de um vetor.</li>
-                <li>Utilizar estruturas de repetição para percorrer vetores.</li>
-                <li>Declarar e manipular matrizes bidimensionais.</li>
-                <li>Desenvolver programas que utilizem vetores e matrizes.</li>
-            </ul>
+            <div class="cards">
+
+                <article class="card">
+                    <h3>Compreender</h3>
+                    <p>Entender os conceitos de vetores e matrizes.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Manipular</h3>
+                    <p>Declarar, inicializar, armazenar e acessar elementos.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Programar</h3>
+                    <p>Utilizar estruturas de repetição para percorrer vetores e matrizes.</p>
+                </article>
+
+            </div>
+
         </section>
 
+
         <!-- VETORES -->
-        <section class="secao">
+        <section id="vetores" class="secao container">
+
+            <span class="sobretitulo">ESTRUTURAS UNIDIMENSIONAIS</span>
+
             <h2>1. O que são vetores?</h2>
 
             <p>
@@ -95,10 +172,15 @@ float nota5 = 8.5;</code></pre>
                 Observe que utilizamos apenas uma variável chamada
                 <strong>notas</strong> para armazenar cinco valores.
             </p>
+
         </section>
 
+
         <!-- DECLARAÇÃO -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">SINTAXE DA LINGUAGEM C</span>
+
             <h2>2. Declarando um vetor em C</h2>
 
             <p>
@@ -136,10 +218,15 @@ Elemento:    10  20  30  40  50</code></pre>
                 Portanto, um vetor com cinco elementos possui
                 índices de 0 até 4.
             </p>
+
         </section>
 
+
         <!-- INICIALIZAÇÃO -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">ARMAZENAMENTO DE DADOS</span>
+
             <h2>3. Inicializando um vetor</h2>
 
             <p>
@@ -171,10 +258,15 @@ numeros[3] = 20;</code></pre>
             <p>
                 O comando acima apresenta o primeiro elemento do vetor.
             </p>
+
         </section>
 
+
         <!-- PERCORRER VETOR -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">ESTRUTURAS DE REPETIÇÃO</span>
+
             <h2>4. Percorrendo um vetor com for</h2>
 
             <p>
@@ -202,7 +294,7 @@ int main() {
     return 0;
 }</code></pre>
 
-            <p><strong>Saída:</strong></p>
+            <h3>Saída:</h3>
 
             <pre><code>10
 20
@@ -214,10 +306,15 @@ int main() {
                 A variável <strong>i</strong> representa o índice
                 utilizado para acessar cada posição do vetor.
             </p>
+
         </section>
 
+
         <!-- ENTRADA DE DADOS -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">ENTRADA DE DADOS</span>
+
             <h2>5. Inserindo dados pelo teclado</h2>
 
             <p>
@@ -256,10 +353,15 @@ int main() {
                 as notas e um segundo laço para apresentar os valores
                 armazenados.
             </p>
+
         </section>
 
+
         <!-- OPERAÇÕES -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">PROCESSAMENTO DE DADOS</span>
+
             <h2>6. Realizando operações com vetores</h2>
 
             <p>
@@ -297,10 +399,15 @@ int main() {
                 informados. Ao final, dividimos o total pela quantidade
                 de notas para obter a média.
             </p>
+
         </section>
 
+
         <!-- MATRIZES -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">ESTRUTURAS BIDIMENSIONAIS</span>
+
             <h2>7. O que são matrizes?</h2>
 
             <p>
@@ -326,10 +433,10 @@ int main() {
                 e três colunas, totalizando seis elementos.
             </p>
 
-            <p>Representação:</p>
+            <h3>Representação:</h3>
 
             <pre><code>        Colunas
-          0   1   2
+           0   1   2
 
 Linha 0   10  20  30
 Linha 1   40  50  60</code></pre>
@@ -339,10 +446,15 @@ Linha 1   40  50  60</code></pre>
                 o primeiro representa a linha e o segundo representa
                 a coluna.
             </p>
+
         </section>
 
+
         <!-- DECLARAÇÃO DE MATRIZ -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">DECLARAÇÃO E INICIALIZAÇÃO</span>
+
             <h2>8. Declarando e inicializando matrizes</h2>
 
             <p>
@@ -371,10 +483,15 @@ Linha 1   40  50  60</code></pre>
             <p>
                 Lembre-se: os índices começam em zero.
             </p>
+
         </section>
 
+
         <!-- PERCORRER MATRIZ -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">LAÇOS ANINHADOS</span>
+
             <h2>9. Percorrendo uma matriz</h2>
 
             <p>
@@ -408,7 +525,7 @@ int main() {
     return 0;
 }</code></pre>
 
-            <p><strong>Saída:</strong></p>
+            <h3>Saída:</h3>
 
             <pre><code>10 20 30
 40 50 60</code></pre>
@@ -417,10 +534,15 @@ int main() {
                 O primeiro laço controla as linhas e o segundo
                 controla as colunas.
             </p>
+
         </section>
 
+
         <!-- ENTRADA EM MATRIZ -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">ENTRADA DE DADOS EM MATRIZES</span>
+
             <h2>10. Inserindo dados em uma matriz</h2>
 
             <p>
@@ -468,10 +590,15 @@ int main() {
                 Nesse exemplo, utilizamos dois laços para preencher
                 a matriz e outros dois para apresentar os valores.
             </p>
+
         </section>
 
+
         <!-- DIFERENÇAS -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">COMPARAÇÃO</span>
+
             <h2>11. Diferenças entre vetores e matrizes</h2>
 
             <p>
@@ -479,158 +606,202 @@ int main() {
                 importantes entre vetores e matrizes.
             </p>
 
-            <ul>
-                <li>
-                    <strong>Vetor:</strong> organiza os elementos
-                    em uma única dimensão.
-                </li>
-                <li>
-                    <strong>Matriz:</strong> organiza os elementos
-                    em linhas e colunas.
-                </li>
-                <li>
-                    <strong>Vetor:</strong> utiliza um índice para
-                    acessar cada elemento.
-                </li>
-                <li>
-                    <strong>Matriz:</strong> utiliza dois índices
-                    para acessar cada elemento bidimensional.
-                </li>
-            </ul>
+            <div class="cards">
+
+                <article class="card">
+                    <h3>Vetores</h3>
+                    <ul>
+                        <li>Organizam os elementos em uma única dimensão.</li>
+                        <li>Utilizam um índice para acessar cada elemento.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Matrizes</h3>
+                    <ul>
+                        <li>Organizam os elementos em linhas e colunas.</li>
+                        <li>Utilizam dois índices para acessar cada elemento bidimensional.</li>
+                    </ul>
+                </article>
+
+            </div>
+
         </section>
 
+
         <!-- CUIDADOS -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">BOAS PRÁTICAS</span>
+
             <h2>12. Cuidados importantes</h2>
 
-            <ul>
-                <li>
-                    Os índices de vetores e matrizes começam em zero.
-                </li>
-                <li>
-                    Não acesse posições fora dos limites declarados.
-                </li>
-                <li>
-                    Verifique se os laços utilizam os limites corretos.
-                </li>
-                <li>
-                    Utilize o tipo de dado adequado para cada informação.
-                </li>
-                <li>
-                    Inicialize as variáveis utilizadas nos cálculos.
-                </li>
-            </ul>
+            <div class="cards">
+
+                <article class="card">
+                    <h3>Índices</h3>
+                    <p>Os índices de vetores e matrizes começam em zero.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Limites</h3>
+                    <p>Não acesse posições fora dos limites declarados.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Repetição</h3>
+                    <p>Verifique se os laços utilizam os limites corretos.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Tipos</h3>
+                    <p>Utilize o tipo de dado adequado para cada informação.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Inicialização</h3>
+                    <p>Inicialize as variáveis utilizadas nos cálculos.</p>
+                </article>
+
+            </div>
 
             <p>
                 Em C, acessar posições fora dos limites de um vetor
                 ou matriz provoca comportamento indefinido.
             </p>
+
         </section>
+
 
         <!-- EXERCÍCIOS -->
-        <section class="secao">
+        <section id="exercicios" class="secao container">
+
+            <span class="sobretitulo">FIXAÇÃO DO CONTEÚDO</span>
+
             <h2>13. Exercícios de fixação</h2>
 
-            <h3>Exercício 1 — Cadastro de números</h3>
+            <div class="cards">
 
-            <p>
-                Desenvolva um programa que solicite ao usuário
-                cinco números inteiros, armazene-os em um vetor
-                e apresente todos os valores cadastrados.
-            </p>
+                <article class="card">
+                    <h3>Exercício 1 — Cadastro de números</h3>
+                    <p>
+                        Desenvolva um programa que solicite ao usuário
+                        cinco números inteiros, armazene-os em um vetor
+                        e apresente todos os valores cadastrados.
+                    </p>
+                </article>
 
-            <h3>Exercício 2 — Soma dos elementos</h3>
+                <article class="card">
+                    <h3>Exercício 2 — Soma dos elementos</h3>
+                    <p>
+                        Crie um vetor com dez números inteiros.
+                        Solicite os valores pelo teclado e calcule
+                        a soma de todos os elementos.
+                    </p>
+                </article>
 
-            <p>
-                Crie um vetor com dez números inteiros.
-                Solicite os valores pelo teclado e calcule
-                a soma de todos os elementos.
-            </p>
+                <article class="card">
+                    <h3>Exercício 3 — Média de notas</h3>
+                    <p>
+                        Desenvolva um programa que armazene as notas
+                        de cinco alunos em um vetor e calcule a média
+                        geral da turma.
+                    </p>
+                </article>
 
-            <h3>Exercício 3 — Média de notas</h3>
+                <article class="card">
+                    <h3>Exercício 4 — Maior e menor valor</h3>
+                    <p>
+                        Crie um vetor de dez números inteiros.
+                        Ao final, apresente o maior e o menor valor
+                        armazenado.
+                    </p>
+                </article>
 
-            <p>
-                Desenvolva um programa que armazene as notas
-                de cinco alunos em um vetor e calcule a média
-                geral da turma.
-            </p>
+                <article class="card">
+                    <h3>Exercício 5 — Cadastro de temperaturas</h3>
+                    <p>
+                        Armazene as temperaturas registradas durante
+                        sete dias em um vetor. Calcule a média e
+                        apresente os dias em que a temperatura ficou
+                        acima da média.
+                    </p>
+                </article>
 
-            <h3>Exercício 4 — Maior e menor valor</h3>
+                <article class="card">
+                    <h3>Exercício 6 — Matriz 3 × 3</h3>
+                    <p>
+                        Desenvolva um programa que solicite nove números
+                        inteiros, armazene-os em uma matriz 3 × 3
+                        e apresente os valores organizados em linhas
+                        e colunas.
+                    </p>
+                </article>
 
-            <p>
-                Crie um vetor de dez números inteiros.
-                Ao final, apresente o maior e o menor valor
-                armazenado.
-            </p>
+                <article class="card">
+                    <h3>Exercício 7 — Soma da matriz</h3>
+                    <p>
+                        Crie uma matriz 3 × 3, solicite os valores
+                        pelo teclado e calcule a soma de todos os
+                        seus elementos.
+                    </p>
+                </article>
 
-            <h3>Exercício 5 — Cadastro de temperaturas</h3>
+                <article class="card">
+                    <h3>Exercício 8 — Diagonal principal</h3>
+                    <p>
+                        Desenvolva um programa que leia uma matriz
+                        3 × 3 e apresente os elementos da diagonal principal.
+                    </p>
+                </article>
 
-            <p>
-                Armazene as temperaturas registradas durante
-                sete dias em um vetor. Calcule a média e
-                apresente os dias em que a temperatura ficou
-                acima da média.
-            </p>
-
-            <h3>Exercício 6 — Matriz 3 × 3</h3>
-
-            <p>
-                Desenvolva um programa que solicite nove números
-                inteiros, armazene-os em uma matriz 3 × 3
-                e apresente os valores organizados em linhas
-                e colunas.
-            </p>
-
-            <h3>Exercício 7 — Soma da matriz</h3>
-
-            <p>
-                Crie uma matriz 3 × 3, solicite os valores
-                pelo teclado e calcule a soma de todos os
-                seus elementos.
-            </p>
-
-            <h3>Exercício 8 — Diagonal principal</h3>
-
-            <p>
-                Desenvolva um programa que leia uma matriz
-                3 × 3 e apresente os elementos da diagonal principal.
-            </p>
+            </div>
 
         </section>
+
 
         <!-- DESAFIO -->
-        <section class="secao">
-            <h2>14. Desafio prático</h2>
+        <section class="faixa-pratica">
 
-            <h3>Sistema de notas de uma turma</h3>
+            <div class="container faixa-conteudo">
 
-            <p>
-                Desenvolva um programa em C para cadastrar as notas
-                de cinco alunos em duas avaliações.
-            </p>
+                <div>
+                    <span class="sobretitulo">DESAFIO PRÁTICO</span>
 
-            <p>O programa deverá:</p>
+                    <h2>14. Sistema de notas de uma turma</h2>
 
-            <ol>
-                <li>Utilizar uma matriz para armazenar as notas.</li>
-                <li>Solicitar as duas notas de cada aluno.</li>
-                <li>Calcular a média individual de cada aluno.</li>
-                <li>Apresentar o resultado de cada estudante.</li>
-                <li>Informar quantos alunos foram aprovados.</li>
-            </ol>
+                    <p>
+                        Desenvolva um programa em C para cadastrar as notas
+                        de cinco alunos em duas avaliações.
+                    </p>
 
-            <p>
-                Considere a média 7,0 como nota mínima para aprovação.
-            </p>
+                    <p>O programa deverá:</p>
 
-            <p>
-                Utilize estruturas de repetição para preencher
-                e percorrer a matriz.
-            </p>
+                    <ol>
+                        <li>Utilizar uma matriz para armazenar as notas.</li>
+                        <li>Solicitar as duas notas de cada aluno.</li>
+                        <li>Calcular a média individual de cada aluno.</li>
+                        <li>Apresentar o resultado de cada estudante.</li>
+                        <li>Informar quantos alunos foram aprovados.</li>
+                    </ol>
+
+                    <p>
+                        Considere a média 7,0 como nota mínima para aprovação.
+                        Utilize estruturas de repetição para preencher
+                        e percorrer a matriz.
+                    </p>
+                </div>
+
+            </div>
+
         </section>
 
+
         <!-- CONCLUSÃO -->
-        <section class="secao">
+        <section class="secao container">
+
+            <span class="sobretitulo">ENCERRAMENTO DA UNIDADE</span>
+
             <h2>15. Conclusão</h2>
 
             <p>
@@ -649,23 +820,30 @@ int main() {
                 de listas sequenciais, listas encadeadas, pilhas
                 e filas.
             </p>
-        </section>
 
-        <!-- NAVEGAÇÃO -->
-        <section class="secao">
-            <a href="../../index.html" class="botao">
-                Voltar à página inicial
+            <a href="../listas/index.html" class="botao">
+                Próxima unidade: Listas
             </a>
+
         </section>
 
     </main>
 
-    <footer>
-        <div class="container">
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+
+            <div>
+                <strong>Estrutura de Dados I</strong>
+                <p>Análise e Desenvolvimento de Sistemas</p>
+            </div>
+
             <p>
                 Material educacional para fins didáticos.
                 © <span id="ano-atual"></span>
             </p>
+
         </div>
     </footer>
 

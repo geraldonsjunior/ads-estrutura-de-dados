@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+        content="Material didático sobre ponteiros, endereços de memória e manipulação de dados em C.">
+
     <title>Ponteiros em C | Estrutura de Dados I</title>
 
     <link rel="stylesheet" href="../../css/style.css">
@@ -13,46 +16,110 @@
 
 <body>
 
-    <header>
-        <div class="container">
-            <h1>Estrutura de Dados I</h1>
-            <p>Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</p>
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="barra-navegacao container">
+
+            <a href="../../index.html" class="marca">
+                <span>ED</span>
+                <div>
+                    <strong>Estrutura de Dados</strong>
+                    <small>ADS · Linguagem C</small>
+                </div>
+            </a>
+
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <nav>
-                <a href="../../index.html">Início</a>
-                <a href="../introducao/index.html">Introdução</a>
-                <a href="index.html">Ponteiros</a>
+                <ul class="menu" id="menu-principal">
+                    <li><a href="../../index.html">Início</a></li>
+                    <li><a href="../introducao/index.html">Introdução</a></li>
+                    <li><a href="#conceito">Ponteiros</a></li>
+                    <li><a href="../vetores-matrizes/index.html">Vetores e Matrizes</a></li>
+                    <li><a href="../listas/index.html">Listas</a></li>
+                    <li><a href="#exercicios">Exercícios</a></li>
+                </ul>
             </nav>
+
         </div>
     </header>
 
-    <main class="container">
 
-        <section class="secao">
-            <h2>Unidade 2 — Ponteiros em C</h2>
+    <main>
 
-            <p>
-                Nesta unidade, vamos estudar os ponteiros, um dos conceitos
-                fundamentais da linguagem C e da disciplina Estrutura de Dados I.
-            </p>
+        <!-- APRESENTAÇÃO -->
+        <section class="hero">
+            <div class="hero-grade container">
 
-            <p>
-                Você aprenderá como acessar endereços de memória, armazenar
-                esses endereços em variáveis e manipular valores utilizando ponteiros.
-            </p>
+                <div class="hero-texto">
+
+                    <span class="sobretitulo">
+                        UNIDADE 02 · MEMÓRIA E ENDEREÇOS
+                    </span>
+
+                    <h1>
+                        Aprendendo
+                        <span>Ponteiros em C</span>
+                    </h1>
+
+                    <p>
+                        Entenda como os programas acessam endereços
+                        de memória, armazenam esses endereços em
+                        variáveis e manipulam dados utilizando ponteiros.
+                    </p>
+
+                    <a href="#conceito" class="botao">
+                        Começar a estudar
+                    </a>
+
+                </div>
+
+                <div class="hero-visual">
+                    <div class="janela-codigo">
+
+                        <div class="janela-topo">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <small>ponteiros.c</small>
+                        </div>
+
+                        <pre><code><span class="codigo-palavra">int</span> idade = 25;
+
+<span class="codigo-palavra">int</span> *ponteiro = &amp;idade;
+
+<span class="codigo-funcao">printf</span>(
+    "Valor: %d",
+    *ponteiro
+);</code></pre>
+
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-        <section class="secao">
+
+        <!-- CONCEITO -->
+        <section id="conceito" class="secao container">
+
+            <span class="sobretitulo">FUNDAMENTOS</span>
+
             <h2>1. O que são ponteiros?</h2>
 
             <p>
-                Um ponteiro é uma variável que armazena o endereço de memória
-                de outra variável.
+                Um ponteiro é uma variável que armazena o endereço
+                de memória de outra variável.
             </p>
 
             <p>
-                Normalmente, uma variável guarda um valor. Já um ponteiro
-                guarda o endereço onde determinado valor está armazenado.
+                Normalmente, uma variável guarda um valor. Já um
+                ponteiro guarda o endereço onde determinado valor
+                está armazenado.
             </p>
 
             <h3>Exemplo:</h3>
@@ -61,17 +128,40 @@
 
 int *ponteiro = &amp;idade;</code></pre>
 
-            <p>Observe o significado:</p>
+            <h3>Observe o significado:</h3>
 
-            <ul>
-                <li><strong>idade:</strong> variável que armazena o valor 25.</li>
-                <li><strong>&amp;idade:</strong> endereço de memória da variável idade.</li>
-                <li><strong>ponteiro:</strong> variável que armazena esse endereço.</li>
-                <li><strong>*ponteiro:</strong> valor armazenado no endereço apontado.</li>
-            </ul>
+            <div class="cards">
+
+                <article class="card">
+                    <h3>idade</h3>
+                    <p>Variável que armazena o valor 25.</p>
+                </article>
+
+                <article class="card">
+                    <h3>&amp;idade</h3>
+                    <p>Endereço de memória da variável idade.</p>
+                </article>
+
+                <article class="card">
+                    <h3>ponteiro</h3>
+                    <p>Variável que armazena esse endereço.</p>
+                </article>
+
+                <article class="card">
+                    <h3>*ponteiro</h3>
+                    <p>Valor armazenado no endereço apontado.</p>
+                </article>
+
+            </div>
+
         </section>
 
-        <section class="secao">
+
+        <!-- ENDEREÇO DE MEMÓRIA -->
+        <section class="secao container">
+
+            <span class="sobretitulo">MEMÓRIA DO COMPUTADOR</span>
+
             <h2>2. Endereço de memória</h2>
 
             <p>
@@ -81,8 +171,8 @@ int *ponteiro = &amp;idade;</code></pre>
             </p>
 
             <p>
-                Na linguagem C, utilizamos o operador <strong>&amp;</strong>
-                para obter o endereço de uma variável.
+                Na linguagem C, utilizamos o operador
+                <strong>&amp;</strong> para obter o endereço de uma variável.
             </p>
 
             <h3>Exemplo prático:</h3>
@@ -104,9 +194,15 @@ int main() {
                 de memória. O endereço apresentado será diferente
                 em cada execução ou ambiente.
             </p>
+
         </section>
 
-        <section class="secao">
+
+        <!-- DECLARAÇÃO -->
+        <section class="secao container">
+
+            <span class="sobretitulo">DECLARAÇÃO DE VARIÁVEIS</span>
+
             <h2>3. Declarando um ponteiro</h2>
 
             <p>
@@ -123,11 +219,24 @@ char *p;</code></pre>
                 deverá apontar.
             </p>
 
-            <ul>
-                <li><strong>int *p:</strong> ponteiro para inteiro.</li>
-                <li><strong>float *p:</strong> ponteiro para número real.</li>
-                <li><strong>char *p:</strong> ponteiro para caractere.</li>
-            </ul>
+            <div class="cards">
+
+                <article class="card">
+                    <h3>int *p</h3>
+                    <p>Ponteiro para inteiro.</p>
+                </article>
+
+                <article class="card">
+                    <h3>float *p</h3>
+                    <p>Ponteiro para número real.</p>
+                </article>
+
+                <article class="card">
+                    <h3>char *p</h3>
+                    <p>Ponteiro para caractere.</p>
+                </article>
+
+            </div>
 
             <p>
                 É uma boa prática inicializar os ponteiros. Quando ainda
@@ -135,25 +244,38 @@ char *p;</code></pre>
             </p>
 
             <pre><code>int *p = NULL;</code></pre>
+
         </section>
 
-        <section class="secao">
+
+        <!-- OPERADORES -->
+        <section class="secao container">
+
+            <span class="sobretitulo">OPERADORES FUNDAMENTAIS</span>
+
             <h2>4. Os operadores &amp; e *</h2>
 
             <p>
                 Dois operadores são essenciais para compreender ponteiros:
             </p>
 
-            <ul>
-                <li>
-                    <strong>&amp; (endereço):</strong>
-                    obtém o endereço de memória de uma variável.
-                </li>
-                <li>
-                    <strong>* (desreferenciação):</strong>
-                    acessa o valor armazenado no endereço apontado.
-                </li>
-            </ul>
+            <div class="cards">
+
+                <article class="card">
+                    <h3>&amp; — Endereço</h3>
+                    <p>
+                        Obtém o endereço de memória de uma variável.
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>* — Desreferenciação</h3>
+                    <p>
+                        Acessa o valor armazenado no endereço apontado.
+                    </p>
+                </article>
+
+            </div>
 
             <h3>Exemplo:</h3>
 
@@ -178,9 +300,15 @@ int main() {
                 é armazenado em <strong>p</strong>. Ao utilizar
                 <strong>*p</strong>, acessamos o valor 50.
             </p>
+
         </section>
 
-        <section class="secao">
+
+        <!-- MODIFICAÇÃO -->
+        <section class="secao container">
+
+            <span class="sobretitulo">MANIPULAÇÃO DE DADOS</span>
+
             <h2>5. Modificando uma variável através de um ponteiro</h2>
 
             <p>
@@ -207,9 +335,7 @@ int main() {
     return 0;
 }</code></pre>
 
-            <p>
-                <strong>Resultado:</strong>
-            </p>
+            <h3>Resultado:</h3>
 
             <pre><code>Antes: 10
 Depois: 100</code></pre>
@@ -219,9 +345,15 @@ Depois: 100</code></pre>
                 alteramos diretamente o conteúdo da variável
                 apontada pelo ponteiro.
             </p>
+
         </section>
 
-        <section class="secao">
+
+        <!-- FUNÇÕES -->
+        <section class="secao container">
+
+            <span class="sobretitulo">PONTEIROS E FUNÇÕES</span>
+
             <h2>6. Ponteiros e funções</h2>
 
             <p>
@@ -260,9 +392,15 @@ int main() {
                 Ao passar um endereço, a função recebe uma cópia desse
                 endereço e pode acessar a variável original por meio dele.
             </p>
+
         </section>
 
-        <section class="secao">
+
+        <!-- VETORES -->
+        <section class="secao container">
+
+            <span class="sobretitulo">PONTEIROS E COLEÇÕES</span>
+
             <h2>7. Ponteiros e vetores</h2>
 
             <p>
@@ -299,9 +437,15 @@ int main() {
                 A aritmética de ponteiros será aprofundada em atividades
                 posteriores.
             </p>
+
         </section>
 
-        <section class="secao">
+
+        <!-- CUIDADOS -->
+        <section class="secao container">
+
+            <span class="sobretitulo">BOAS PRÁTICAS</span>
+
             <h2>8. Cuidados ao utilizar ponteiros</h2>
 
             <p>
@@ -309,100 +453,155 @@ int main() {
                 ser utilizados com atenção.
             </p>
 
-            <ul>
-                <li>Não utilize um ponteiro sem inicializá-lo.</li>
-                <li>Não acesse endereços inválidos.</li>
-                <li>Não desreferencie um ponteiro NULL.</li>
-                <li>Evite acessar posições fora dos limites de um vetor.</li>
-                <li>Tenha cuidado com a memória alocada dinamicamente.</li>
-            </ul>
+            <div class="cards">
+
+                <article class="card">
+                    <h3>Inicialização</h3>
+                    <p>Não utilize um ponteiro sem inicializá-lo.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Endereços válidos</h3>
+                    <p>Não acesse endereços inválidos.</p>
+                </article>
+
+                <article class="card">
+                    <h3>NULL</h3>
+                    <p>Não desreferencie um ponteiro NULL.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Limites</h3>
+                    <p>Evite acessar posições fora dos limites de um vetor.</p>
+                </article>
+
+                <article class="card">
+                    <h3>Memória</h3>
+                    <p>Tenha cuidado com a memória alocada dinamicamente.</p>
+                </article>
+
+            </div>
 
             <p>
                 Um uso incorreto de ponteiros pode provocar falhas
                 durante a execução do programa.
             </p>
+
         </section>
 
-        <section class="secao">
+
+        <!-- EXERCÍCIOS -->
+        <section id="exercicios" class="secao container">
+
+            <span class="sobretitulo">FIXAÇÃO DO CONTEÚDO</span>
+
             <h2>9. Exercícios de fixação</h2>
 
-            <h3>Exercício 1 — Conceitos</h3>
+            <div class="cards">
 
-            <p>
-                Explique, com suas palavras, o que é um ponteiro
-                e qual é sua principal finalidade.
-            </p>
+                <article class="card">
+                    <h3>Exercício 1 — Conceitos</h3>
+                    <p>
+                        Explique, com suas palavras, o que é um ponteiro
+                        e qual é sua principal finalidade.
+                    </p>
+                </article>
 
-            <h3>Exercício 2 — Endereço de memória</h3>
+                <article class="card">
+                    <h3>Exercício 2 — Endereço de memória</h3>
+                    <p>
+                        Crie um programa que declare uma variável inteira,
+                        solicite um número ao usuário e apresente:
+                    </p>
+                    <ul>
+                        <li>O valor digitado.</li>
+                        <li>O endereço de memória da variável.</li>
+                    </ul>
+                </article>
 
-            <p>
-                Crie um programa que declare uma variável inteira,
-                solicite um número ao usuário e apresente:
-            </p>
+                <article class="card">
+                    <h3>Exercício 3 — Manipulação de valores</h3>
+                    <p>
+                        Crie uma variável inteira chamada idade.
+                        Utilize um ponteiro para alterar seu valor.
+                        Ao final, apresente o valor antes e depois da alteração.
+                    </p>
+                </article>
 
-            <ul>
-                <li>O valor digitado.</li>
-                <li>O endereço de memória da variável.</li>
-            </ul>
+                <article class="card">
+                    <h3>Exercício 4 — Funções e ponteiros</h3>
+                    <p>
+                        Desenvolva uma função que receba um ponteiro para inteiro
+                        e dobre o valor da variável apontada.
+                    </p>
+                </article>
 
-            <h3>Exercício 3 — Manipulação de valores</h3>
+                <article class="card">
+                    <h3>Exercício 5 — Ponteiros e vetores</h3>
+                    <p>
+                        Crie um vetor de cinco números inteiros.
+                        Utilize um ponteiro para percorrer o vetor e exibir
+                        todos os seus elementos.
+                    </p>
+                </article>
 
-            <p>
-                Crie uma variável inteira chamada idade.
-                Utilize um ponteiro para alterar seu valor.
-                Ao final, apresente o valor antes e depois da alteração.
-            </p>
+            </div>
 
-            <h3>Exercício 4 — Funções e ponteiros</h3>
-
-            <p>
-                Desenvolva uma função que receba um ponteiro para inteiro
-                e dobre o valor da variável apontada.
-            </p>
-
-            <h3>Exercício 5 — Ponteiros e vetores</h3>
-
-            <p>
-                Crie um vetor de cinco números inteiros.
-                Utilize um ponteiro para percorrer o vetor e exibir
-                todos os seus elementos.
-            </p>
         </section>
 
-        <section class="secao">
-            <h2>10. Conclusão</h2>
 
-            <p>
-                Os ponteiros permitem trabalhar diretamente com endereços
-                de memória e são fundamentais para compreender diversas
-                estruturas de dados.
-            </p>
+        <!-- CONCLUSÃO -->
+        <section class="faixa-pratica">
 
-            <p>
-                Listas encadeadas, filas, pilhas e árvores utilizam
-                ponteiros para conectar e organizar elementos na memória.
-            </p>
+            <div class="container faixa-conteudo">
 
-            <p>
-                Dominar esse conceito é um passo importante para avançar
-                no estudo da linguagem C e das estruturas de dados.
-            </p>
-        </section>
+                <div>
+                    <span class="sobretitulo">ENCERRAMENTO DA UNIDADE</span>
 
-        <section class="secao">
-            <a href="../../index.html" class="botao">
-                Voltar à página inicial
-            </a>
+                    <h2>Continue avançando!</h2>
+
+                    <p>
+                        Os ponteiros permitem trabalhar diretamente com
+                        endereços de memória e são fundamentais para compreender
+                        diversas estruturas de dados.
+                    </p>
+
+                    <p>
+                        Listas encadeadas, filas, pilhas e árvores utilizam
+                        ponteiros para conectar e organizar elementos na memória.
+                    </p>
+
+                    <p>
+                        Dominar esse conceito é um passo importante para avançar
+                        no estudo da linguagem C e das estruturas de dados.
+                    </p>
+                </div>
+
+                <a href="../listas/index.html" class="botao">
+                    Próxima unidade: Listas
+                </a>
+
+            </div>
+
         </section>
 
     </main>
 
-    <footer>
-        <div class="container">
+
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+
+            <div>
+                <strong>Estrutura de Dados I</strong>
+                <p>Análise e Desenvolvimento de Sistemas</p>
+            </div>
+
             <p>
                 Material educacional para fins didáticos.
                 © <span id="ano-atual"></span>
             </p>
+
         </div>
     </footer>
 

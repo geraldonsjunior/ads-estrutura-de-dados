@@ -5,94 +5,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Introdução à Estrutura de Dados I | ADS</title>
+    <title>Introdução à Estrutura de Dados | ADS</title>
 
-    <!-- CSS principal do site -->
     <link rel="stylesheet" href="../../css/style.css">
-
-    <!-- JavaScript principal -->
     <script src="../../js/script.js" defer></script>
 </head>
 
 <body>
 
-    <header>
-        <div class="container">
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="barra-navegacao container">
 
-            <h1>Estrutura de Dados I</h1>
+            <a href="../../index.html" class="marca">
+                <span>ED</span>
+                <div>
+                    <strong>Estrutura de Dados</strong>
+                    <small>ADS · Linguagem C</small>
+                </div>
+            </a>
 
-            <p>Curso de Análise e Desenvolvimento de Sistemas</p>
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
             <nav>
-                <ul>
+                <ul class="menu" id="menu-principal">
                     <li><a href="../../index.html">Início</a></li>
                     <li><a href="#conceito">Conceito</a></li>
                     <li><a href="#importancia">Importância</a></li>
                     <li><a href="#classificacao">Classificação</a></li>
                     <li><a href="#exemplo">Exemplo em C</a></li>
+                    <li><a href="#exercicios">Exercícios</a></li>
                 </ul>
             </nav>
 
         </div>
     </header>
 
+
     <main>
 
         <!-- APRESENTAÇÃO DA UNIDADE -->
-        <section class="destaque">
+        <section class="hero">
+            <div class="hero-grade container">
 
-            <div class="container">
+                <div class="hero-texto">
 
-                <h2>Unidade 01 — Introdução à Estrutura de Dados</h2>
+                    <span class="sobretitulo">
+                        UNIDADE 01 · FUNDAMENTOS
+                    </span>
 
-                <p>
-                    Compreenda como os computadores organizam,
-                    armazenam e manipulam informações.
-                </p>
+                    <h1>
+                        Introdução à
+                        <span>Estrutura de Dados</span>
+                    </h1>
 
-                <a href="#conceito" class="botao">
-                    Começar a estudar
-                </a>
+                    <p>
+                        Compreenda como os computadores organizam,
+                        armazenam e manipulam informações. Conheça
+                        os conceitos fundamentais que serão utilizados
+                        durante nossos estudos em linguagem C.
+                    </p>
+
+                    <a href="#conceito" class="botao">
+                        Começar a estudar
+                    </a>
+
+                </div>
+
+                <div class="hero-visual">
+                    <div class="janela-codigo">
+
+                        <div class="janela-topo">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <small>introducao.c</small>
+                        </div>
+
+                        <pre><code>
+<span class="codigo-palavra">#include</span> &lt;stdio.h&gt;
+
+<span class="codigo-palavra">int</span> main() {
+
+    <span class="codigo-palavra">int</span> dados[5];
+
+    <span class="codigo-funcao">printf</span>(
+        "Organizando dados!"
+    );
+
+    <span class="codigo-palavra">return</span> 0;
+}
+                        </code></pre>
+
+                    </div>
+                </div>
 
             </div>
-
         </section>
 
+
         <!-- CONCEITO -->
-        <section id="conceito" class="container secao">
+        <section id="conceito" class="secao container">
+
+            <span class="sobretitulo">FUNDAMENTOS</span>
 
             <h2>1. O que é Estrutura de Dados?</h2>
 
             <p>
                 Estrutura de Dados é uma área da computação que
-                estuda maneiras de organizar, armazenar e
-                manipular dados para que possam ser utilizados
-                de forma eficiente pelos programas.
+                estuda maneiras de organizar, armazenar e manipular
+                dados para que possam ser utilizados de forma
+                eficiente pelos programas.
             </p>
 
             <p>
-                Durante o desenvolvimento de um software,
-                precisamos trabalhar com diferentes informações,
-                como nomes, idades, notas, produtos e registros.
+                Durante o desenvolvimento de um software, precisamos
+                trabalhar com diferentes informações, como nomes,
+                idades, notas, produtos e registros.
             </p>
 
             <p>
                 As estruturas de dados permitem organizar essas
-                informações de acordo com as necessidades
-                de cada aplicação.
+                informações de acordo com as necessidades de
+                cada aplicação.
             </p>
 
         </section>
 
+
         <!-- IMPORTÂNCIA -->
-        <section id="importancia" class="container secao">
+        <section id="importancia" class="secao container">
+
+            <span class="sobretitulo">APLICAÇÕES</span>
 
             <h2>2. Por que estudar Estrutura de Dados?</h2>
 
             <p>
-                A escolha adequada de uma estrutura de dados
-                pode tornar um programa mais organizado,
-                eficiente e fácil de manter.
+                A escolha adequada de uma estrutura de dados pode
+                tornar um programa mais organizado, eficiente
+                e fácil de manter.
             </p>
 
             <div class="cards">
@@ -108,17 +163,16 @@
                 <article class="card">
                     <h3>Eficiência</h3>
                     <p>
-                        Ajuda a melhorar o desempenho das
-                        operações realizadas pelos programas.
+                        Ajuda a melhorar o desempenho das operações
+                        realizadas pelos programas.
                     </p>
                 </article>
 
                 <article class="card">
                     <h3>Reutilização</h3>
                     <p>
-                        Facilita a construção de soluções
-                        que podem ser utilizadas em diferentes
-                        aplicações.
+                        Facilita a construção de soluções que podem
+                        ser utilizadas em diferentes aplicações.
                     </p>
                 </article>
 
@@ -126,54 +180,66 @@
 
         </section>
 
+
         <!-- CLASSIFICAÇÃO -->
-        <section id="classificacao" class="container secao">
+        <section id="classificacao" class="secao container">
+
+            <span class="sobretitulo">ORGANIZAÇÃO DOS DADOS</span>
 
             <h2>3. Classificação das Estruturas de Dados</h2>
 
             <p>
                 As estruturas de dados podem ser classificadas
-                de diferentes maneiras. Uma classificação
-                inicial considera a forma como os dados são
-                organizados e armazenados.
+                de diferentes maneiras. Uma classificação inicial
+                considera a forma como os dados são organizados
+                e armazenados.
             </p>
 
-            <h3>3.1 Estruturas estáticas</h3>
+            <article class="card">
+                <h3>3.1 Estruturas estáticas</h3>
 
-            <p>
-                Possuem tamanho definido previamente,
-                geralmente durante a declaração.
-            </p>
+                <p>
+                    Possuem tamanho definido previamente,
+                    geralmente durante a declaração.
+                </p>
 
-            <p>
-                Exemplo: vetores em linguagem C.
-            </p>
+                <p>
+                    <strong>Exemplo:</strong> vetores em linguagem C.
+                </p>
+            </article>
 
-            <h3>3.2 Estruturas dinâmicas</h3>
+            <article class="card">
+                <h3>3.2 Estruturas dinâmicas</h3>
 
-            <p>
-                Permitem alocação e liberação de memória
-                durante a execução do programa, possibilitando
-                maior flexibilidade na organização dos dados.
-            </p>
+                <p>
+                    Permitem alocação e liberação de memória
+                    durante a execução do programa, possibilitando
+                    maior flexibilidade na organização dos dados.
+                </p>
 
-            <p>
-                Exemplo: listas encadeadas.
-            </p>
+                <p>
+                    <strong>Exemplo:</strong> listas encadeadas.
+                </p>
+            </article>
 
-            <h3>3.3 Organização dos dados</h3>
+            <article class="card">
+                <h3>3.3 Organização dos dados</h3>
 
-            <p>
-                Também podemos estudar estruturas lineares,
-                nas quais os elementos seguem uma sequência,
-                e estruturas não lineares, que apresentam
-                relações mais complexas entre seus elementos.
-            </p>
+                <p>
+                    Também podemos estudar estruturas lineares,
+                    nas quais os elementos seguem uma sequência,
+                    e estruturas não lineares, que apresentam
+                    relações mais complexas entre seus elementos.
+                </p>
+            </article>
 
         </section>
 
+
         <!-- EXEMPLO EM C -->
-        <section id="exemplo" class="container secao">
+        <section id="exemplo" class="secao container">
+
+            <span class="sobretitulo">APRENDENDO NA PRÁTICA</span>
 
             <h2>4. Exemplo prático em linguagem C</h2>
 
@@ -183,13 +249,16 @@
             </p>
 
             <p>
-                Uma possibilidade é utilizar um vetor,
-                que permite armazenar vários valores do
-                mesmo tipo em uma única estrutura.
+                Uma possibilidade é utilizar um vetor, que permite
+                armazenar vários valores do mesmo tipo em uma
+                única estrutura.
             </p>
 
-            <pre><code>
-#include &lt;stdio.h&gt;
+            <div class="card">
+
+                <h3>Exemplo: armazenamento de notas</h3>
+
+                <pre><code>#include &lt;stdio.h&gt;
 
 int main() {
 
@@ -211,100 +280,119 @@ int main() {
     }
 
     return 0;
-}
-            </code></pre>
+}</code></pre>
+
+            </div>
 
             <p>
                 Nesse exemplo, utilizamos um vetor chamado
                 <strong>notas</strong>, capaz de armazenar
-                cinco valores do tipo float.
+                cinco valores do tipo <strong>float</strong>.
             </p>
 
             <p>
-                Observe que os elementos são acessados
-                por meio de índices, começando em zero.
+                Observe que os elementos são acessados por meio
+                de índices, começando em zero.
             </p>
 
         </section>
 
+
         <!-- EXERCÍCIOS -->
-        <section id="exercicios" class="container secao">
+        <section id="exercicios" class="secao container">
+
+            <span class="sobretitulo">FIXAÇÃO DO CONTEÚDO</span>
 
             <h2>5. Exercícios de fixação</h2>
 
-            <div class="card">
+            <div class="cards">
 
-                <h3>Questão 1</h3>
+                <article class="card">
+                    <h3>Questão 1</h3>
+                    <p>
+                        O que são estruturas de dados e qual
+                        sua principal finalidade?
+                    </p>
+                </article>
 
-                <p>
-                    O que são estruturas de dados e qual
-                    sua principal finalidade?
-                </p>
+                <article class="card">
+                    <h3>Questão 2</h3>
+                    <p>
+                        Qual é a diferença entre uma estrutura
+                        estática e uma estrutura dinâmica?
+                    </p>
+                </article>
 
-                <h3>Questão 2</h3>
+                <article class="card">
+                    <h3>Questão 3</h3>
+                    <p>
+                        Por que um vetor pode ser utilizado
+                        para armazenar as notas de vários alunos?
+                    </p>
+                </article>
 
-                <p>
-                    Qual é a diferença entre uma estrutura
-                    estática e uma estrutura dinâmica?
-                </p>
-
-                <h3>Questão 3</h3>
-
-                <p>
-                    Por que um vetor pode ser utilizado
-                    para armazenar as notas de vários alunos?
-                </p>
-
-                <h3>Questão 4 — Prática</h3>
-
-                <p>
-                    Desenvolva um programa em C que armazene
-                    cinco números inteiros em um vetor e,
-                    ao final, apresente todos os números
-                    cadastrados.
-                </p>
+                <article class="card">
+                    <h3>Questão 4 — Prática</h3>
+                    <p>
+                        Desenvolva um programa em C que armazene
+                        cinco números inteiros em um vetor e,
+                        ao final, apresente todos os números
+                        cadastrados.
+                    </p>
+                </article>
 
             </div>
 
         </section>
 
-        <section class="container secao">
 
-            <h2>Conclusão</h2>
+        <!-- CONCLUSÃO -->
+        <section class="faixa-pratica">
+            <div class="container faixa-conteudo">
 
-            <p>
-                Nesta unidade, conhecemos os conceitos iniciais
-                de Estrutura de Dados, sua importância e algumas
-                formas de classificação.
-            </p>
+                <div>
+                    <span class="sobretitulo">PRÓXIMA ETAPA</span>
 
-            <p>
-                Na próxima unidade, estudaremos ponteiros,
-                endereços de memória e sua utilização
-                na linguagem C.
-            </p>
+                    <h2>Continue seus estudos!</h2>
 
-            <a href="../../index.html" class="botao">
-                Voltar à página inicial
-            </a>
+                    <p>
+                        Nesta unidade, conhecemos os conceitos
+                        iniciais de Estrutura de Dados, sua
+                        importância e algumas formas de classificação.
+                    </p>
 
+                    <p>
+                        Na próxima unidade, estudaremos ponteiros,
+                        endereços de memória e sua utilização
+                        na linguagem C.
+                    </p>
+                </div>
+
+                <a href="../../index.html" class="botao">
+                    Voltar ao início
+                </a>
+
+            </div>
         </section>
 
     </main>
 
-    <footer>
 
-        <div class="container">
+    <!-- RODAPÉ -->
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+
+            <div>
+                <strong>Estrutura de Dados I</strong>
+                <p>Análise e Desenvolvimento de Sistemas</p>
+            </div>
 
             <p>
-                Estrutura de Dados | Análise e Desenvolvimento
-                de Sistemas
+                Material educacional para fins didáticos.
+                © <span id="ano-atual"></span>
             </p>
 
-            <p>Material educacional para fins didáticos.</p>
-
         </div>
-
     </footer>
 
 </body>
